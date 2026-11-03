@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>26届校招生集训 · 项目作品集</title>
+<style>
+:root {
+  --paper: #f7f6f2;
+  --ink: #203044;
+  --body: #46505a;
+  --muted: #626b72;
+  --orange: #ad502b;
+  --line: #dedbd4;
+  --neutral: #f0eee8;
+  --blue: #f2efe9;
+  --soft: #f0eee8;
+  --font-body: 16px;
+  --font-detail: 14px;
+  --font-caption: 13px;
+  --font-hero: 56px;
+  --font-subtitle: 33px;
+  --font-section: 32px;
+  --font-block: 23px;
+  --font-module: 20px;
+  --font-component: 18px;
+  --font-number: 64px;
+  --content-gutter: 48px;
+  --section-top: 28px;
+  --section-bottom: 60px;
+  --block-gap: 36px;
+  --module-gap: 24px;
+  --paragraph-gap: 18px;
+}
+
+/* Base typography. Diagram typography is preserved separately below. */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+body { margin: 0; background: var(--paper); color: var(--body); font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: var(--font-body); line-height: 1.8; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+strong, b { font-weight: 600; }
+h1, h2, h3, h4, h5, h6 { margin: 0; color: var(--ink); font-weight: 600; line-height: 1.45; }
+p { margin: 0 0 var(--paragraph-gap); }
+[hidden] { display: none !important; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--orange); outline-offset: 5px; }
+
+/* Header and navigation stay independent of the chapter hierarchy. */
+header { position: sticky; top: 0; z-index: 10; background: rgba(247,246,242,.96); border-bottom: 1px solid var(--line); }
+.bar { max-width: 1200px; margin: auto; display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; }
+.brand { font-size: 14px; letter-spacing: .5px; color: var(--ink); font-weight: 600; }
+.brand span { color: var(--orange); margin-right: 12px; }
+.nav { display: flex; gap: 25px; font-size: 12px; }
+.nav a:hover, .reading-nav a:hover { color: var(--orange); }
+.reading-nav { position: fixed; right: 24px; top: 50%; transform: translateY(-50%); width: 150px; z-index: 9; }
+.reading-nav-title { font-size: 12px; letter-spacing: 1px; color: var(--muted); margin: 0 0 15px 21px; }
+.reading-nav ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--line); }
+.reading-nav li { position: relative; }
+.reading-nav a { display: flex; align-items: center; gap: 9px; min-height: 49px; padding: 8px 0 8px 20px; font-size: 13px; color: var(--muted); transition: color .18s; }
+.reading-nav a:before { content: ""; position: absolute; left: -4px; top: 50%; transform: translateY(-50%); width: 7px; height: 7px; border-radius: 50%; background: var(--line); box-shadow: 0 0 0 4px var(--paper); transition: background .18s; }
+.reading-nav .nav-index { font-size: 11px; font-variant-numeric: tabular-nums; }
+.reading-nav a[aria-current="location"] { color: var(--ink); font-weight: 600; }
+.reading-nav a[aria-current="location"]:before { background: var(--orange); box-shadow: 0 0 0 4px var(--paper),0 0 0 5px var(--orange); }
+
+/* Level 1: project overview. */
+.hero.hero-positioning { display: block; padding: 64px 0 52px; }
+.eyebrow { font-size: 13px; letter-spacing: .5px; font-weight: 600; color: var(--orange); margin-bottom: 24px; }
+.hero-positioning h1 { font-size: var(--font-hero); line-height: 1.35; letter-spacing: -1px; }
+.hero-positioning h1 span { display: block; font-size: var(--font-subtitle); font-weight: 400; letter-spacing: 0; margin-top: 12px; }
+.hero-positioning .lead { font-size: 19px; max-width: 960px; line-height: 1.85; margin-top: 28px; margin-bottom: 0; }
+.hero-positioning .meta { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0; border-top: 1px solid var(--line); padding-top: 24px; margin-top: 32px; }
+.meta > div { padding: 0 30px; border-left: 1px solid var(--line); min-width: 0; }
+.meta > div:first-child { padding-left: 0; border: 0; }
+.meta small { display: block; font-size: var(--font-caption); color: var(--muted); }
+.meta strong { display: block; font-size: 24px; color: var(--ink); margin-top: 6px; }
+.hero-change { padding: 0; margin-top: 28px; }
+.hero-change > strong { color: var(--orange); font-size: var(--font-caption); }
+.hero-change p { color: var(--ink); font-size: 17px; margin: 8px 0 0; }
+
+/* Level 2: light numerals on a separate row, inset chapter titles. */
+section { padding: var(--section-top) 0 var(--section-bottom); border-bottom: 1px solid var(--line); }
+#context { border-top: 1px solid var(--line); }
+.section-head { display: grid; grid-template-columns: var(--content-gutter) minmax(0,1fr); row-gap: 9px; margin-bottom: 24px; }
+.section-num { grid-column: 1 / -1; font-family: "Helvetica Neue", Arial, sans-serif; font-size: var(--font-number); font-weight: 300; letter-spacing: .01em; line-height: 1; color: var(--orange); padding: 0; }
+.section-head > div:last-child { grid-column: 2; min-width: 0; }
+.section-head h2 { font-size: var(--font-section); letter-spacing: -.3px; }
+.section-head p { font-size: var(--font-body); max-width: 860px; margin: 10px 0 0; }
+.diagnosis-outline { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 26px; padding: 13px 16px; margin: 0 0 24px var(--content-gutter); background: var(--soft); font-size: var(--font-detail); line-height: 1.65; }
+.diagnosis-outline a { display: flex; align-items: center; gap: 9px; color: var(--ink); }
+.diagnosis-outline b { font: 500 13px Arial,sans-serif; color: var(--orange); }
+
+/* Level 3: one shared alignment line; no stacked padding before the first block. */
+.diagnosis-step { padding: 0; scroll-margin-top: 92px; }
+.diagnosis-step + .diagnosis-step { margin-top: var(--block-gap); }
+.diagnosis-head { display: grid; grid-template-columns: var(--content-gutter) minmax(0,1fr); align-items: start; gap: 0; margin-bottom: 14px; }
+.diagnosis-head > div { min-width: 0; }
+.step-letter { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid var(--orange); border-radius: 50%; color: var(--orange); font: 500 14px/1 Arial,sans-serif; padding: 0; margin-top: 1px; }
+.diagnosis-head h3 { font-size: var(--font-block); }
+.diagnosis-head p { font-size: var(--font-detail); color: var(--muted); line-height: 1.75; margin: 8px 0 0; }
+.diagnosis-step > :is(.diagnosis-table,.diagnosis-note,.stakeholders,.needs-group,.diagnosis-constraint,.diagnosis-boundary,.task-judgment,.design-stages,.schedule,.results-experience,.results-materials,.results-demo-layout) { margin-left: var(--content-gutter); }
+.diagnosis-step > :is(.diagnosis-table,.stakeholders,.needs-group,.design-stages,.results-materials,.results-demo-layout) { width: calc(100% - var(--content-gutter)); }
+.diagnosis-note { font-size: var(--font-caption); color: var(--muted); line-height: 1.75; margin-top: 14px; margin-bottom: 0; }
+
+/* Evidence tables do not add another heading level. */
+.diagnosis-table { table-layout: fixed; border-collapse: collapse; font-size: var(--font-body); line-height: 1.8; }
+.diagnosis-table th,.diagnosis-table td { text-align: left; vertical-align: top; padding: 14px 16px; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+.diagnosis-table thead th { font-size: var(--font-caption); font-weight: 600; background: var(--soft); color: var(--muted); padding: 10px 16px; }
+.source-table th:first-child { width: 34%; }
+.source-table tbody th,.delivery-table tbody th,.results-delivery-table tbody th { color: var(--ink); font-weight: 600; }
+.goal-table th:first-child { width: 43%; }
+.goal-table strong { font-size: var(--font-body); font-weight: 600; color: var(--ink); }
+.goal-table tr[id] { scroll-margin-top: 100px; }
+.delivery-table th:first-child { width: 23%; }
+.delivery-table th:last-child { width: 21%; }
+.delivery-table tbody th span { display: block; color: var(--orange); font-size: var(--font-caption); margin-bottom: 3px; }
+.delivery-table tbody td:last-child,.results-delivery-table tbody td:last-child { font-size: var(--font-detail); }
+.mechanism-table th:first-child { width: 27%; }
+.mechanism-table th:nth-child(2) { width: 37%; }
+.mechanism-table tbody th { font-weight: 400; }
+.mechanism-table strong { font-weight: 600; color: var(--ink); }
+.mechanism-table p { font-size: var(--font-detail); margin: 8px 0 0; }
+.mechanism-table ul { list-style: none; padding: 0; margin: 0; }
+.results-delivery-table th:first-child,.results-delivery-table th:last-child { width: 25%; }
+
+/* Needs and decisions: content first, restrained evidence styling. */
+.stakeholders { display: block; }
+.stakeholder { display: grid; grid-template-columns: 180px minmax(0,1fr); gap: 24px; align-items: start; border-top: 1px solid var(--line); padding: 16px 0; min-width: 0; }
+.stakeholder h5 { font-size: var(--font-detail); font-weight: 500; color: var(--muted); line-height: 1.8; margin: 0; }
+.stakeholder ul { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px 20px; list-style: none; padding: 0; margin: 0; font-size: var(--font-body); }
+.stakeholder li { margin: 0; }
+.diagnosis-constraint,.diagnosis-boundary { display: flex; align-items: flex-start; gap: 20px; padding: 16px 0; margin-top: var(--module-gap); }
+.needs-group > h4,.diagnosis-constraint > h4 { font-size: var(--font-module); margin-bottom: 14px; }
+.diagnosis-constraint { display: block; padding: 0; margin-top: 32px; }
+.diagnosis-boundary h4 { flex: none; font-size: var(--font-caption); }
+.diagnosis-constraint ul { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px 24px; list-style: none; padding: 14px 0 0; margin: 0; border-top: 1px solid var(--line); font-size: var(--font-body); }
+.diagnosis-constraint p { font-size: var(--font-body); margin: 16px 0 0; }
+.diagnosis-boundary p { font-size: var(--font-body); margin: 0; }
+.task-judgment { color: var(--ink); font-size: var(--font-body); padding: 0; margin-top: 0; margin-bottom: 20px; }
+
+/* Level 4: specific design changes and cases; avoid repeated framing. */
+.iteration { margin: var(--module-gap) 0 0 var(--content-gutter); padding: 0; }
+.iteration-title { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px 14px; margin-bottom: 14px; }
+.iteration-title > span { color: var(--orange); font-size: var(--font-caption); }
+.iteration-title h4 { font-size: var(--font-module); }
+.iteration-title > p { font-size: var(--font-detail); color: var(--muted); margin: 0; }
+.iteration-columns { display: grid; grid-template-columns: 1fr 1.2fr; gap: 24px; }
+.iteration-columns > div { padding: 0; min-width: 0; }
+.iteration-columns > div + div { border-left: 1px solid var(--line); padding-left: 24px; }
+.iteration-columns b { display: block; font-size: var(--font-caption); color: var(--muted); }
+.iteration-columns > div:last-child b { color: var(--orange); }
+.iteration-columns p { font-size: var(--font-body); margin: 8px 0 0; }
+.iteration-target { font-size: var(--font-detail); margin-top: 16px; color: var(--body); }
+.design-stages { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
+.design-stages > div { border-top: 1px solid var(--line); padding-top: 16px; min-width: 0; }
+.design-stages small { color: var(--orange); font-size: var(--font-caption); }
+.design-stages h4 { font-size: var(--font-module); margin: 8px 0 12px; }
+.design-stages p { font-size: var(--font-body); margin: 0; }
+.design-stages .format { font-size: var(--font-caption); color: var(--muted); margin-top: 16px; }
+
+/* Schedule: preserve its existing data and tab interaction. */
+.schedule { border-top: 1px solid var(--line); padding-top: 20px; margin-top: var(--module-gap); }
+.schedule-head { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+.schedule h4 { font-size: var(--font-module); }
+.tabs { display: flex; gap: 6px; }
+.tabs button { border: 1px solid var(--line); background: transparent; padding: 8px 15px; font-size: var(--font-detail); color: var(--muted); cursor: pointer; border-radius: 3px; }
+.tabs button[aria-selected="true"] { color: var(--paper); background: var(--ink); border-color: var(--ink); }
+.schedule-note { font-size: var(--font-caption); color: var(--muted); line-height: 1.75; margin: 14px 0 22px; }
+.days { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 0; }
+.days.five { grid-template-columns: repeat(5,minmax(0,1fr)); }
+.day { padding: 0 16px; border-left: 1px solid var(--line); font-size: var(--font-body); min-width: 0; }
+.day:first-child { border: 0; padding-left: 0; }
+.day:last-child { padding-right: 0; }
+.day b { display: block; color: var(--ink); font-size: 21px; font-weight: 600; }
+.day em { display: block; font-style: normal; color: var(--orange); font-size: var(--font-caption); line-height: 1.6; margin: 6px 0 14px; }
+.day p { margin: 9px 0 0; }
+
+/* Case prose is inset; process diagrams retain their full original width. */
+.delivery-case { margin-top: var(--module-gap); padding: 0; scroll-margin-top: 95px; }
+.delivery-case + .delivery-case { margin-top: var(--block-gap); }
+.delivery-case-title { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; margin-left: var(--content-gutter); }
+.delivery-case-title > span { font-size: var(--font-caption); color: var(--orange); line-height: 1.5; padding-top: 0; }
+.delivery-case-title h4 { font-size: var(--font-module); }
+.delivery-case > .delivery-flow,.puzzle-block > .delivery-flow { margin-left: var(--content-gutter); width: calc(100% - var(--content-gutter)); }
+.case-background { font-size: var(--font-body); line-height: 1.8; margin: 14px 0 20px var(--content-gutter); }
+.course-review { margin: 20px 0 0 var(--content-gutter); padding: 0; }
+.course-review h5 { font-size: var(--font-caption); color: var(--orange); margin-bottom: 8px; }
+.course-review p { font-size: var(--font-body); margin: 0; }
+.course-final-detail { margin: var(--module-gap) 0 0 var(--content-gutter); }
+.course-final-detail > b { display: block; font-size: var(--font-caption); color: var(--muted); margin-bottom: 14px; }
+.course-final-detail ol { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); list-style: none; padding: 0; margin: 0; gap: 20px; }
+.course-final-detail li { border-top: 1px solid var(--line); padding-top: 13px; min-width: 0; }
+.course-final-detail li strong { font-size: var(--font-component); color: var(--ink); }
+.course-final-detail li p { font-size: var(--font-body); line-height: 1.75; margin: 8px 0 0; }
+.puzzle-block { margin-top: var(--module-gap); }
+.puzzle-block h5 { font-size: var(--font-module); margin-left: var(--content-gutter); }
+.puzzle-block h5 > span { font-size: 18px; color: var(--orange); margin-right: 8px; }
+.puzzle-caption { font-size: var(--font-caption); color: var(--muted); margin: 8px 0 18px var(--content-gutter); }
+.puzzle-questions,.puzzle-summary { margin-left: var(--content-gutter); width: calc(100% - var(--content-gutter)); display: grid; gap: 24px; }
+.puzzle-questions { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.puzzle-questions > div { border-top: 1px solid var(--line); padding-top: 16px; min-width: 0; }
+.puzzle-questions h6,.puzzle-summary h6 { font-size: var(--font-component); margin-bottom: 12px; }
+.puzzle-questions ul { list-style: none; padding: 0; margin: 0; font-size: var(--font-body); }
+.puzzle-questions li { margin: 8px 0; }
+.puzzle-summary { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.puzzle-summary > div { border-top: 1px solid var(--line); padding: 16px 0 0; min-width: 0; }
+.puzzle-summary span { display: block; font-size: var(--font-caption); color: var(--orange); margin-top: 16px; }
+.puzzle-summary p,.puzzle-summary ul { font-size: var(--font-body); margin: 8px 0 0; }
+.puzzle-summary ul { list-style: none; padding: 0; }
+.puzzle-summary li { margin: 8px 0; }
+.delivery-case > .mechanism-table { margin: 20px 0 0 var(--content-gutter); width: calc(100% - var(--content-gutter)); }
+
+/* Outputs: a few meaningful numbers, aligned supporting evidence. */
+.results-experience { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 24px; border-top: 1px solid var(--line); padding-top: 16px; margin-top: 20px; width: fit-content; max-width: calc(100% - var(--content-gutter)); }
+.results-experience > span { color: var(--orange); font-size: var(--font-caption); }
+.results-experience > strong { font-size: 32px; color: var(--ink); font-weight: 500; line-height: 1.3; }
+.results-experience small { font-size: 21px; font-weight: 400; }
+.results-experience p { font-size: var(--font-detail); margin: 0; }
+.results-materials { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
+.results-materials > div { padding-top: 16px; border-top: 1px solid var(--line); min-width: 0; }
+.results-materials h4 { font-size: var(--font-component); margin-bottom: 8px; }
+.results-materials span { font-size: var(--font-caption); color: var(--orange); }
+.results-materials ul { list-style: none; padding: 0; font-size: var(--font-body); margin: 12px 0 0; }
+.results-materials li { margin: 7px 0; }
+.results-demo-layout { display: grid; grid-template-columns: 250px minmax(0,1fr); gap: 32px; }
+.results-demo-metric { padding: 0; }
+.results-demo-metric > strong { display: block; font-size: 46px; font-weight: 500; color: var(--ink); line-height: 1.3; margin-bottom: 12px; }
+.results-demo-metric > b { font-size: var(--font-component); color: var(--ink); }
+.results-demo-metric p { font-size: var(--font-detail); margin: 8px 0 0; }
+.results-demo-detail h4 { font-size: var(--font-caption); color: var(--orange); margin-bottom: 8px; }
+.results-demo-detail p { font-size: var(--font-body); margin: 0; }
+.results-demo-detail > div + div { margin-top: var(--module-gap); }
+
+/* Reflection stays at the same block level, without ornamental frames. */
+.reflection-insights { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 32px; }
+.reflection-insight { padding: 0; min-width: 0; }
+.reflection-insight > p { font-size: var(--font-body); margin: 0 0 0 var(--content-gutter); }
+.reflection-evaluation { margin-top: var(--block-gap); padding: 0; }
+.reflection-evaluation-columns { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px; margin-left: var(--content-gutter); }
+.reflection-evaluation-columns > div + div { border-left: 1px solid var(--line); padding-left: 28px; }
+.reflection-evaluation-columns h4 { font-size: var(--font-caption); color: var(--muted); margin-bottom: 8px; }
+.reflection-evaluation-columns > div + div h4 { color: var(--orange); }
+.reflection-evaluation-columns p { font-size: var(--font-body); margin: 0; }
+footer { padding: 30px 0 44px; font-size: 12px; color: var(--muted); }
+
+/* Responsive typography and prose layout. Process layouts are protected below. */
+@media (min-width:1000px) {
+  .nav { display: none; }
+  .bar { max-width: none; padding-right: 190px; }
+}
+@media (min-width:1000px) and (max-width:1200px) {
+  .stakeholder { grid-template-columns:150px minmax(0,1fr); gap:20px; }
+  .stakeholder ul { grid-template-columns:1fr; }
+  .days.five { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px 12px; }
+}
+@media (min-width:701px) and (max-width:999px) {
+  :root { --font-number:54px; --font-hero:46px; --font-subtitle:30px; --font-section:29px; }
+  .nav { display:none; }
+  .reading-nav { right:8px; width:105px; }
+  .reading-nav a { font-size:11px; gap:5px; padding-left:13px; }
+  .reading-nav-title { margin-left:13px; font-size:10px; }
+  .reading-nav .nav-index { font-size:10px; }
+  .hero-positioning .lead { font-size:18px; }
+  .hero-break { display:none; }
+  .stakeholder { grid-template-columns:140px minmax(0,1fr); gap:18px; }
+  .stakeholder ul { grid-template-columns:1fr; }
+  .iteration-columns { gap:18px; }
+  .iteration-columns > div + div { padding-left:18px; }
+  .course-final-detail ol { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .puzzle-summary { grid-template-columns:1fr; }
+  .results-demo-layout { grid-template-columns:200px minmax(0,1fr); gap:24px; }
+  .reflection-insights { grid-template-columns:1fr; gap:var(--block-gap); }
+}
+@media (max-width:700px) {
+  :root { --font-body:15px; --font-caption:13px; --font-hero:36px; --font-subtitle:25px; --font-section:26px; --font-block:21px; --font-module:19px; --font-component:17px; --font-number:44px; --content-gutter:38px; --section-top:24px; --section-bottom:44px; --block-gap:32px; --module-gap:22px; }
+  .bar { padding:16px 22px; }
+  .nav { display:none; }
+  .reading-nav { top:auto; bottom:0; right:0; left:0; transform:none; width:auto; background:rgba(247,246,242,.98); border-top:1px solid var(--line); padding:10px 12px calc(10px + env(safe-area-inset-bottom)); }
+  .reading-nav-title { display:none; }
+  .reading-nav ol { display:flex; justify-content:space-between; border-left:0; position:relative; }
+  .reading-nav ol:before { content:""; position:absolute; left:6%; right:6%; top:4px; height:1px; background:var(--line); }
+  .reading-nav li { flex:1; }
+  .reading-nav a { min-height:39px; display:flex; flex-direction:column; gap:5px; padding:15px 2px 0; font-size:10px; white-space:nowrap; }
+  .reading-nav a:before { left:50%; top:1px; transform:translateX(-50%); }
+  .reading-nav .nav-index { display:none; }
+  .hero.hero-positioning { padding:40px 0 38px; }
+  .hero-positioning .lead { font-size:16px; margin-top:22px; }
+  .hero-break { display:none; }
+  .eyebrow { font-size:12px; margin-bottom:20px; }
+  .hero-positioning .meta { margin-top:26px; padding-top:20px; }
+  .meta > div { padding:0 10px; }
+  .meta small { font-size:12px; }
+  .meta strong { font-size:17px; }
+  .hero-change { margin-top:24px; }
+  .hero-change p { font-size:15px; }
+  .section-head { grid-template-columns:1fr; row-gap:8px; }
+  .section-head > div:last-child { grid-column:1; }
+  .section-head p { margin-top:10px; }
+  .diagnosis-outline { margin-left:0; padding:12px 14px; gap:12px 18px; font-size:13px; }
+  .diagnosis-step > :is(.diagnosis-table,.diagnosis-note,.stakeholders,.needs-group,.diagnosis-constraint,.diagnosis-boundary,.task-judgment,.design-stages,.schedule,.results-experience,.results-materials,.results-demo-layout) { margin-left:0; }
+  .diagnosis-step > :is(.diagnosis-table,.stakeholders,.needs-group,.design-stages,.results-materials,.results-demo-layout) { width:100%; }
+  .step-letter { width:28px; height:28px; font-size:13px; }
+  .diagnosis-head p { font-size:13px; }
+  .diagnosis-table th,.diagnosis-table td { padding:12px 8px; }
+  .diagnosis-table thead th { padding:9px 8px; font-size:12px; }
+  .delivery-table tbody td:last-child,.results-delivery-table tbody td:last-child { font-size:15px; }
+  .stakeholder { grid-template-columns:1fr; gap:8px; padding:14px 0; }
+  .stakeholder ul { grid-template-columns:1fr; gap:8px; }
+  .diagnosis-constraint,.diagnosis-boundary { flex-direction:column; gap:10px; }
+  .diagnosis-constraint ul { grid-template-columns:1fr; gap:8px; }
+  .iteration { margin-left:0; }
+  .iteration-title > p { flex-basis:100%; }
+  .iteration-columns { grid-template-columns:1fr; gap:16px; }
+  .iteration-columns > div + div { border-left:0; padding-left:0; }
+  .design-stages { grid-template-columns:1fr; gap:22px; }
+  .schedule-head { flex-direction:column; align-items:flex-start; gap:14px; }
+  .tabs button { font-size:13px; padding:8px 13px; }
+  .days,.days.five { grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 14px; }
+  .day { padding:0 10px; overflow-wrap:anywhere; }
+  .day:nth-child(odd) { padding-left:0; border-left:0; }
+  .day b { font-size:20px; }
+  .case-background,.course-review,.course-final-detail { margin-left:0; }
+  .delivery-case-title { margin-left:0; }
+  .delivery-case-title h4 { min-width:0; }
+  .delivery-case-title > span { padding-top:0; }
+  .delivery-case > .delivery-flow,.puzzle-block > .delivery-flow { margin-left:0; width:100%; }
+  .course-final-detail ol { grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px 16px; }
+  .puzzle-block h5,.puzzle-caption { margin-left:0; }
+  .puzzle-questions,.puzzle-summary { width:100%; margin-left:0; grid-template-columns:1fr; gap:22px; }
+  .delivery-case > .mechanism-table { width:100%; margin-left:0; }
+  .results-experience { max-width:100%; gap:10px 18px; }
+  .results-experience > strong { font-size:29px; }
+  .results-experience small { font-size:20px; }
+  .results-materials { grid-template-columns:1fr; gap:22px; }
+  .results-demo-layout { grid-template-columns:1fr; gap:22px; }
+  .results-demo-metric > strong { font-size:42px; }
+  .reflection-insights { grid-template-columns:1fr; gap:var(--block-gap); }
+  .reflection-insight > p { margin-left:0; }
+  .reflection-evaluation-columns { margin-left:0; grid-template-columns:1fr; gap:22px; }
+  .reflection-evaluation-columns > div + div { border-left:0; padding:0; }
+}
+@media (max-width:420px) {
+  :root { --font-hero:32px; --font-subtitle:23px; }
+  .meta strong { font-size:15px; }
+  .reading-nav a { font-size:9px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  .reading-nav a,.reading-nav a:before { transition:none; }
+}
+
+
+/* Original diagram internals and main geometry. Case diagram alignment is explicitly adjusted above. */
+main{max-width:1120px;padding:0 40px;margin:auto}
+@media(max-width:600px){main{padding:0 22px}}
+@media(min-width:1000px){main{width:calc(100% - 200px);margin-right:190px;margin-left:auto}}
+@media(min-width:701px) and (max-width:999px){main{width:calc(100% - 120px);margin-right:120px;padding-left:28px;padding-right:28px}}
+@media(max-width:700px){main{padding-bottom:75px}}
+.delivery-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px;list-style:none;padding:0;margin:0}
+.delivery-flow li{min-width:0}
+.delivery-flow>li{position:relative;background:var(--blue);padding:15px 14px}
+.delivery-flow>li:not(:last-child):after{content:"→";position:absolute;right:-16px;top:30px;color:var(--muted);font-size:13px}
+.delivery-flow strong{display:block;font-size:15px;font-weight:550;color:var(--ink);line-height:1.5}
+.delivery-flow small{display:block;font-size:11px;color:var(--orange);margin-top:4px}
+.delivery-flow small:empty{display:none}
+.delivery-flow ul{list-style:none;margin:8px 0 0;padding:0;font-size:12px;line-height:1.7}
+.delivery-flow ul li+li{margin-top:4px}
+.five-steps{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media(max-width:999px){.five-steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:999px){.five-steps>li:after{display:none}}
+@media(max-width:600px){.delivery-flow,.five-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+@media(max-width:600px){.delivery-flow>li{padding:13px 12px}}
+@media(max-width:600px){.delivery-flow>li:after{display:none}}
+@media(max-width:600px){.delivery-flow strong{font-size:14px}}
+@media(max-width:600px){.delivery-flow ul{font-size:11px}}
+main{padding-left:40px;padding-right:40px}
+.delivery-flow{gap:18px}
+.delivery-flow>li{padding:18px 16px;background:var(--neutral)}
+.delivery-flow strong{font-size:17px;font-weight:600;line-height:1.55}
+.delivery-flow small{font-size:13px;margin-top:7px}
+.delivery-flow ul{font-size:14px;line-height:1.75;margin-top:10px}
+.delivery-flow ul li+li{margin-top:7px}
+.delivery-flow>li:not(:last-child):after{top:33px}
+@media(min-width:1000px) and (max-width:1200px){main{padding-left:32px;padding-right:32px}}
+@media(min-width:1000px) and (max-width:1200px){.five-steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:1000px) and (max-width:1200px){.five-steps>li:after{display:none}}
+@media(min-width:701px) and (max-width:999px){main{padding-left:28px;padding-right:28px}}
+@media(min-width:701px) and (max-width:999px){.delivery-flow{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:701px) and (max-width:999px){.five-steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:701px) and (max-width:999px){.delivery-flow>li:after{display:none}}
+@media(max-width:700px){main{padding-left:22px;padding-right:22px}}
+@media(max-width:700px){.delivery-flow,.five-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
+@media(max-width:700px){.delivery-flow>li{padding:17px 14px}}
+@media(max-width:700px){.delivery-flow>li:after{display:none}}
+@media(max-width:700px){.delivery-flow strong{font-size:16px}}
+@media(max-width:700px){.delivery-flow ul{font-size:14px;line-height:1.8}}
+@media(max-width:700px){.delivery-flow small{font-size:12px}}
+@media(max-width:420px){.five-steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="bar"><a class="brand" href="#top"><span>蔡榕臻</span>项目作品集</a><nav class="nav" aria-label="章节导航"><a href="#context">需求</a><a href="#design">设计与日程</a><a href="#delivery">实施</a><a href="#results">成果</a><a href="#reflection">复盘</a></nav></div></header>
+<nav class="reading-nav" aria-label="阅读位置与项目结构">
+<p class="reading-nav-title">项目结构</p>
+<ol>
+<li><a href="#top" aria-current="location"><span class="nav-index" aria-hidden="true">00</span><span>项目概览</span></a></li>
+<li><a href="#context"><span class="nav-index" aria-hidden="true">01</span><span>需求与任务</span></a></li>
+<li><a href="#design"><span class="nav-index" aria-hidden="true">02</span><span>设计与日程</span></a></li>
+<li><a href="#delivery"><span class="nav-index" aria-hidden="true">03</span><span>统筹与实施</span></a></li>
+<li><a href="#results"><span class="nav-index" aria-hidden="true">04</span><span>成果与价值</span></a></li>
+<li><a href="#reflection"><span class="nav-index" aria-hidden="true">05</span><span>个人复盘</span></a></li>
+</ol>
+</nav>
+<main id="top">
+<div class="hero hero-positioning">
+<div class="eyebrow">校招集训｜新人培养项目迭代</div>
+<h1>26届校招生集训<span>从需求调研到完整交付</span></h1>
+<p class="lead">面对不同项目组的培养需求与脱岗约束，我在往届基础上重新组织本届集训，<br class="hero-break">负责需求调研、方案设计、分工推进与实施评价。</p>
+<div class="meta"><div><small>项目对象</small><strong>42名校招生</strong></div><div><small>个人角色</small><strong>全流程负责人</strong></div><div><small>项目年份</small><strong>2026年</strong></div></div>
+<div class="hero-change"><strong>本届的关键改变</strong><p>将集中培训延伸为分阶段学习，并通过课程共建、素质拓展和GameJam完成具体交付。</p></div>
+</div>
+<section id="context" aria-labelledby="context-title">
+<div class="section-head"><div class="section-num">01</div><div><h2 id="context-title">需求诊断：确定集训应该承担什么</h2><p>综合项目组要求与新人期待，识别共同需求，在实施约束下确定培养任务。</p></div></div>
+<nav class="diagnosis-outline" aria-label="需求诊断章节内部结构"><a href="#diagnosis-sources"><b>A</b> 信息收集</a><a href="#diagnosis-needs"><b>B</b> 需求与约束</a><a href="#diagnosis-goals"><b>C</b> 判断与培养任务</a></nav>
+<div class="diagnosis-step" id="diagnosis-sources"><div class="diagnosis-head"><span class="step-letter" aria-hidden="true">A</span><div><h3>多渠道收集信息</h3><p>既看项目组对新人的要求，也看新人自身的需求与既有集训体验。</p></div></div>
+<table class="diagnosis-table source-table"><thead><tr><th scope="col">信息渠道</th><th scope="col">诊断用途</th></tr></thead><tbody><tr><th scope="row">往届高绩效校招生及导师回访</th><td>了解理想新人画像与入职不同阶段的成长要求</td></tr><tr><th scope="row">多轮面试评价分析</th><td>梳理项目组关注的能力、录用者优势与待考察点</td></tr><tr><th scope="row">往届校招生访谈</th><td>回顾有效内容，识别学习负担与参与体验问题</td></tr><tr><th scope="row">本届校招生访谈</th><td>了解新人背景、学习兴趣与参与期待</td></tr><tr><th scope="row">重点岗位业务侧问卷</th><td>收集导师、Leader及HRBP反馈，作为岗位课程开发输入</td></tr></tbody></table>
+<p class="diagnosis-note">整体诊断主要依托前四类信息；重点岗位问卷进一步连接后续课程开发。</p></div>
+<div class="diagnosis-step" id="diagnosis-needs"><div class="diagnosis-head"><span class="step-letter" aria-hidden="true">B</span><div><h3>归纳各方需求与实施约束</h3><p>我分别整理项目组、HRBP、新人与培训团队的期待，识别共同需求。</p></div></div>
+<div class="needs-group"><h4>各方需求</h4><div class="stakeholders"><div class="stakeholder"><h5>项目组（导师&amp;Leader）</h5><ul><li>解决入职早期共性问题</li><li>理解岗位与工作要求</li><li>逐步承担实际工作任务</li></ul></div><div class="stakeholder"><h5>HRBP</h5><ul><li>适应职场环境</li><li>建立沟通与协作意识</li><li>支持新人融入</li></ul></div><div class="stakeholder"><h5>本届新人</h5><ul><li>了解行业与公司战略项目</li><li>认识同伴、建立联系</li><li>获得有参与感的学习体验</li></ul></div></div></div>
+<aside class="diagnosis-constraint"><h4>实施约束</h4><div><ul><li>集中脱岗时间有限</li><li>外地差旅成本</li><li>密集学习负担</li><li>初次互动的接受程度</li></ul></div></aside></div>
+<div class="diagnosis-step" id="diagnosis-goals"><div class="diagnosis-head"><span class="step-letter" aria-hidden="true">C</span><div><h3>从多方期待中确定培养任务</h3><p>以共通性、入职阶段与集训适配性作为取舍依据。</p></div></div>
+<p class="task-judgment">在有限的集训时间内，我优先选择<strong>跨项目共通、入职早期需要、适合通过集体学习与任务体验回应</strong>的需求，为项目组日常培养提供补充。</p>
+<table class="diagnosis-table goal-table"><thead><tr><th scope="col">优先纳入的共同需求</th><th scope="col">确定的培养任务</th></tr></thead><tbody>
+<tr id="goal-cognition"><td>行业、公司业务与岗位关系的认知需求</td><td><strong>建立行业、公司与岗位的基础认知</strong></td></tr>
+<tr id="goal-collaboration"><td>职场适应、沟通协作与决策的共性需求</td><td><strong>支持职场适应与协作学习</strong></td></tr>
+<tr id="goal-connection"><td>新人的交往期待与组织的融入诉求</td><td><strong>建立同伴联系与共同学习体验</strong></td></tr>
+</tbody></table>
+
+</div>
+</section>
+
+<section id="design" aria-labelledby="design-title"><div class="section-head"><div class="section-num">02</div><div><h2 id="design-title">整体设计：将培养任务转化为方案</h2><p>在往届基础上迭代学习节奏、认知内容与任务体验，再组织为可执行的分阶段安排。</p></div></div>
+<nav class="diagnosis-outline" aria-label="整体设计章节内部结构"><a href="#design-iterations"><b>A</b> 三方面迭代</a><a href="#design-stages"><b>B</b> 分阶段落地与日程</a></nav>
+<div class="diagnosis-step" id="design-iterations"><div class="diagnosis-head"><span class="step-letter" aria-hidden="true">A</span><div><h3>三方面迭代：回应培养任务</h3><p>将诊断结果转化为内容与形式的具体调整。</p></div></div><article class="iteration"><div class="iteration-title"><span>01</span><h4>调整学习节奏</h4><p>从集中输入到分段学习</p></div><div class="iteration-columns"><div><b>原有安排与不足</b><p>往届岗位分享压缩在线下集训期间，内容密集、学习负担较重，集中占用时间也较长。</p></div><div><b>本届调整</b><p>公司基础课程安排为前置学习，线上线下同步、滚动开课；岗位分享移至集中集训后，分散到后续周期。</p></div></div><div class="iteration-target">为三个培养任务提供更灵活的学习条件，兼顾消化时间与业务安排。</div></article><article class="iteration"><div class="iteration-title"><span>02</span><h4>重组认知内容</h4><p>补充行业与业务全貌</p></div><div class="iteration-columns"><div><b>承接培养任务</b><p>围绕基础认知需求，将行业与公司业务作为共同学习内容。</p></div><div><b>本届调整</b><p>重新设计SLG前沿洞察、研发与发行AI应用、游戏研运流程等分享；岗位课程结合新人和业务反馈确定重点。</p></div></div></article><article class="iteration"><div class="iteration-title"><span>03</span><h4>强化任务体验</h4><p>让软素质培养进入协作场景</p></div><div class="iteration-columns"><div><b>承接培养任务</b><p>围绕职场协作与同伴联系需求，为新人提供共同完成任务的情境。</p></div><div><b>本届调整</b><p>保留GameJam实战，增设团队共建活动；通过组内复盘、代表分享与总结，进一步深化新人对职场协作的理解，将协作经历联系到具体工作要求。</p></div></div></article>
+
+</div><div class="diagnosis-step" id="design-stages"><div class="diagnosis-head"><span class="step-letter" aria-hidden="true">B</span><div><h3>分阶段落地与具体日程</h3><p>明确每个阶段承担的任务、学习内容和参与方式。</p></div></div>
+<div class="design design-stages"><div><small>阶段一 · 前置学习</small><h4>公司基础内容</h4><p>公司介绍、风控合规、IP政策。</p><div class="format">线上线下同步 · 滚动开课</div></div><div><small>阶段二 · 集中集训</small><h4>共同认知与任务体验</h4><p>行业与业务认知、同伴互动、协作体验与实战。</p><div class="format">7月28—31日 · 北京线下</div></div><div><small>阶段三 · 岗位专题分享</small><h4>岗位学习深化</h4><p>六场分享，展开岗位职责、工作方法与具体问题。</p><div class="format">8月3—7日 · 线上线下同步</div></div></div>
+<div class="schedule"><div class="schedule-head"><h4>具体学习安排</h4><div class="tabs" role="tablist" aria-label="培训阶段"><button id="tab-july" role="tab" aria-selected="true" aria-controls="july">集中集训</button><button id="tab-aug" role="tab" aria-selected="false" aria-controls="aug">岗位分享</button></div></div><div id="july" role="tabpanel" aria-labelledby="tab-july"><p class="schedule-note">7月28—31日 · 北京线下，从认知输入走向团队实战。</p><div class="days"><div class="day"><b>07.28</b><em>破冰与行业认知提升</em><p>破冰</p><p>高管面对面</p><p>SLG洞察</p><p>研发向 / 发行向AI</p><p>游戏研运工作流</p></div><div class="day"><b>07.29</b><em>素质拓展与跨岗位协作</em><p>管理七巧板</p><p>GameJam启动与小组开发</p></div><div class="day"><b>07.30</b><em>跨岗位协作</em><p>GameJam小组开发</p></div><div class="day"><b>07.31</b><em>成果展示</em><p>GameJam展示与评审</p></div></div></div><div id="aug" role="tabpanel" aria-labelledby="tab-aug" hidden><p class="schedule-note">8月3—7日 · 北京新人线下参与，其他职场新人线上直播参与。</p><div class="days five"><div class="day"><b>08.03</b><em>17:00—18:00</em><p>策划岗位分享</p></div><div class="day"><b>08.04</b><em>17:00—18:00</em><p>运营岗位分享</p></div><div class="day"><b>08.05</b><em>17:00—18:00</em><p>美术岗位分享</p></div><div class="day"><b>08.06</b><em>17:00—18:00</em><p>UED岗位分享</p></div><div class="day"><b>08.07</b><em>16:30—17:30</em><p>UA岗位分享</p><em>17:45—18:45</em><p>创意素材岗位分享</p></div></div></div></div>
+</div></section>
+<section id="delivery" aria-labelledby="delivery-title"><div class="section-head"><div class="section-num">03</div><div><h2 id="delivery-title">统筹与实施：从方案进入具体交付</h2><p>拆解任务、安排分工并推进执行，让内容、学员组织与资源准备共同进入交付。</p></div></div>
+<nav class="diagnosis-outline" aria-label="统筹与实施章节内部结构"><a href="#delivery-organization"><b>A</b> 统筹交付</a><a href="#delivery-cases"><b>B</b> 三个代表性案例</a></nav>
+<div class="diagnosis-step" id="delivery-organization"><div class="diagnosis-head"><span class="step-letter" aria-hidden="true">A</span><div><h3>统筹交付：明确环节与我的责任</h3><p>我负责本届任务拆解、分工安排与跟进，协调准备工作并推进集中集训和岗位分享。</p></div></div><table class="diagnosis-table delivery-table"><thead><tr><th scope="col">交付环节</th><th scope="col">我的具体行动</th><th scope="col">主要交付物</th></tr></thead><tbody><tr><th scope="row"><span>01</span>任务拆解与分工</th><td>拆解内容、活动、学员组织、资源及评价任务；安排团队职责，跟进进度并协调执行。</td><td>任务看板、责任分工</td></tr><tr><th scope="row"><span>02</span>课程与活动开发</th><td>汇总需求，与内部专家共建及审核部分课程；参与破冰、素质拓展和GameJam设计。</td><td>课程内容、活动规则、参赛手册</td></tr><tr><th scope="row"><span>03</span>学员与资源准备</th><td>制作日程、通知、出行指南及集训材料；对接HRBP、学员与组长，协调场地、设备和API资源。</td><td>学员材料、活动与开发资源</td></tr><tr><th scope="row"><span>04</span>实施与现场协调</th><td>推进活动开展，承担活动带领、复盘总结及GameJam开场、展示等工作，协调现场问题。</td><td>集训活动、团队复盘、作品展示</td></tr><tr><th scope="row"><span>05</span>评价与成果整理</th><td>设计集训及岗位分享测试，整理参与反馈与活动产出。</td><td>测试与反馈、成果材料</td></tr></tbody></table>
+<p class="diagnosis-note">团队成员承担部分讲师与高管沟通、宣传、设备准备及现场支持；行政、IT和内部专家提供资源与专业协作。</p></div>
+<div class="diagnosis-step" id="delivery-cases"><div class="diagnosis-head"><span class="step-letter" aria-hidden="true">B</span><div><h3>代表性案例：从关键判断到具体交付</h3><p>三个案例分别体现课程转译、主持与复盘引导、机制设计。</p></div></div>
+<article class="delivery-case" id="delivery-course"><div class="delivery-case-title"><span>案例 01</span><h4>创意素材岗位专项分享｜将业务经验转化为新人可用的方法</h4></div>
+<p class="case-background">这门岗位分享既帮助素材岗位新人理解工作要求，也让其他岗位了解素材制作与协作关系。我基于新人及业务侧反馈，与讲师共定内容重点，并通过案例建议和审核推动课程开发。</p>
+<ol class="delivery-flow "><li><strong>需求整理</strong><small></small><ul><li>汇总新人及部门反馈</li></ul></li><li><strong>专家共建</strong><small></small><ul><li>确认带教问题与解决方法</li></ul></li><li><strong>结构与案例</strong><small></small><ul><li>共定大纲，建议案例讲解</li></ul></li><li><strong>审核调整</strong><small></small><ul><li>检查内容，提出修改意见</li></ul></li></ol>
+<aside class="course-review"><h5>具体审稿建议</h5><p>围绕ROI、曝光量与消耗设置对照情境：三项均好／其中一项不佳。引导新人依据市场反馈分析创意表现，寻找素材迭代方向。</p></aside>
+<div class="course-final course-final-detail"><b>最终课程结构</b><ol><li><strong>探索岗位</strong><p>岗位职责与价值</p></li><li><strong>扩张认知</strong><p>素材制作与数据复盘工作流</p></li><li><strong>开发能力</strong><p>核心能力与成长路径</p></li><li><strong>征服挑战</strong><p>新人常见问题与AI应用</p></li></ol></div>
+
+</article>
+<article class="delivery-case" id="delivery-puzzle"><div class="delivery-case-title"><span>案例 02</span><h4>素质拓展活动｜管理七巧板</h4></div>
+<p class="case-background">7个小组在有限资源、信息传递限制和不同任务下协作。我参与活动设计，承担主持、复盘引导与总结。导入承接前一天的游戏研运分享，让新人通过任务体验进一步理解跨职能协作。</p>
+<div class="puzzle-block"><h5><span>①</span> 主持节奏与协同控场</h5><p class="puzzle-caption">通过规则、参与秩序与分享节奏，保障活动体验并组织复盘。</p>
+<ol class="delivery-flow five-steps"><li><strong>规则与答疑</strong><small>5分钟＋5分钟</small><ul><li>说明活动规则</li><li>规则答疑</li></ul></li><li><strong>任务开展</strong><small>30分钟</small><ul><li>组织团队更新积分</li><li>观察记录，必要时干预违规</li></ul></li><li><strong>组内复盘</strong><small>15分钟</small><ul><li>按不同角色设置问题</li><li>引导分析行动及其影响</li></ul></li><li><strong>代表分享</strong><small>20分钟</small><ul><li>每组不超过3分钟</li><li>经验／教训／改进方案</li></ul></li><li><strong>整体总结</strong><small>10分钟</small><ul><li>提炼三个工作主题</li><li>联系游戏研运协作要求</li></ul></li></ol></div>
+<div class="puzzle-block"><h5><span>②</span> 差异化复盘提问</h5><p class="puzzle-caption">针对执行小组与统筹小组，分别追问目标、行动、影响和改进。</p>
+<div class="puzzle-questions"><div><h6>执行小组 · 1—6组</h6><ul><li>成功标准在不同阶段发生了什么变化？</li><li>资源不足时采取了什么行动，对结果有何影响？</li><li>如何平衡本组任务与支援其他组？</li></ul></div><div><h6>统筹小组 · 第7组</h6><ul><li>自身角色如何推动或限制全局进度？</li><li>多个需求同时出现时，如何决定资源优先级？</li><li>信息断层在哪里，重来会怎样设计流转路径？</li></ul></div></div></div>
+<div class="puzzle-block"><h5><span>③</span> 整体总结：从活动经历转译为工作方法</h5><p class="puzzle-caption">每个主题连接活动机制、协作原则与游戏研发中的具体行为。</p>
+<div class="puzzle-summary"><div><h6>目标管理与团队信任</h6><span>活动切入点</span><p>局部任务与团队总分</p><span>我的总结要点</span><ul><li>先理解任务“为什么做”</li><li>局部最优不等于全局最优</li><li>分歧先看目标与资源约束</li></ul></div><div><h6>沟通与协作</h6><span>活动切入点</span><p>信息表达与任务交接</p><span>我的总结要点</span><ul><li>根据项目阶段主动补位</li><li>交付成果要让下游直接使用</li><li>及时向Mentor／Leader反馈风险</li></ul></div><div><h6>资源与工具</h6><span>活动切入点</span><p>有限资源与重复任务</p><span>我的总结要点</span><ul><li>从“等资源”转向“找资源”</li><li>复用已有资产与知识</li><li>将解决方法沉淀给他人使用</li></ul></div></div></div>
+
+</article>
+<article class="delivery-case" id="delivery-gamejam"><div class="delivery-case-title"><span>案例 03</span><h4>GameJam｜调整激励与评选机制，支持实战交付</h4></div>
+<p class="case-background">新人在限定时间内跨岗位协作，完成游戏Demo并展示。我重点调整奖励与评选机制，同时编写手册、协调开发资源并推进现场实施。</p>
+<table class="diagnosis-table mechanism-table"><thead><tr><th scope="col">调整方向／原有情况</th><th scope="col">我的关键行动</th><th scope="col">最终机制</th></tr></thead><tbody>
+<tr><th scope="row"><strong>激励机制</strong><p>往届奖励吸引力不足，参与体验与质量有改进空间。</p></th><td>结合公司战略、往届反馈、同类活动与剩余预算，争取更高奖励。</td><td><ul><li>最佳Demo奖：<strong>5000元／队</strong></li><li>最佳人气奖：<strong>3000元／队</strong></li><li>参与奖：<strong>200元／人</strong></li></ul></td></tr>
+<tr><th scope="row"><strong>评选机制</strong><p>此前仅由4位评委打分。</p></th><td>借助AI妙搭搭建内部投票系统，设置拉票环节。</td><td>专业评委评分＋内部投票，增加员工参与及作品展示机会。</td></tr>
+</tbody></table>
+
+</article></div></section>
+<section id="results" aria-labelledby="results-title"><div class="section-head"><div class="section-num">04</div><div><h2 id="results-title">交付成果：回应培养任务，形成后续参考</h2><p>完成分阶段学习、团队活动与GameJam实战交付；以课程、评价材料和作品，呈现项目最终交付及其对认知、协作与同伴联系需求的回应。</p></div></div>
+<nav class="diagnosis-outline" aria-label="成果与价值章节内部结构"><a href="#results-learning"><b>A</b> 学习交付</a><a href="#results-materials"><b>B</b> 评价与观察材料</a><a href="#results-demo"><b>C</b> 实战作品与业务讨论</a></nav>
+<div class="diagnosis-step" id="results-learning"><div class="diagnosis-head"><span class="step-letter" aria-hidden="true">A</span><div><h3>学习交付：回应三项培养任务</h3><p>围绕共同需求组织课程与活动，为项目组日常培养提供补充。</p></div></div><table class="diagnosis-table results-delivery-table"><thead><tr><th scope="col">培养任务</th><th scope="col">完成的学习内容与活动</th><th scope="col">可核验的交付材料</th></tr></thead><tbody><tr><th scope="row">基础认知</th><td>行业洞察、AI应用、游戏研运流程及六场岗位专题分享。</td><td>课程与分享材料、测试成绩</td></tr><tr><th scope="row">职场适应与协作学习</th><td>团队共建、GameJam及复盘，提供目标协调、沟通与共同交付情境。</td><td>小组复盘记录</td></tr><tr><th scope="row">同伴联系与共同学习</th><td>破冰、跨岗位组队与共同活动，创造相互认识、交流和合作的机会。</td><td>团队作品</td></tr></tbody></table>
+<div class="results-experience"><span>参与体验</span><strong>4.98 <small>/ 5.00</small></strong><p>本届集训满意度评分</p></div>
+</div><div class="diagnosis-step" id="results-materials"><div class="diagnosis-head"><span class="step-letter" aria-hidden="true">B</span><div><h3>评价与观察材料：保留多种了解新人表现的入口</h3><p>测试、复盘与作品分别提供不同信息，共同构成后续评价的参考材料。</p></div></div><div class="results-materials"><div><h4>内容测试</h4><span>知识理解</span><ul><li>集训设置即时小测</li><li>每门岗位分享后围绕内容设计测试</li></ul></div><div><h4>小组复盘记录</h4><span>协作反思</span><ul><li>保留目标、行动与问题分析</li><li>作为了解团队反思过程的参考</li></ul></div><div><h4>Demo与作品展示</h4><span>团队交付</span><ul><li>呈现玩法、合作与成果表达</li><li>为进一步观察新人表现提供场景</li></ul></div></div>
+
+</div><div class="diagnosis-step" id="results-demo"><div class="diagnosis-head"><span class="step-letter" aria-hidden="true">C</span><div><h3>实战作品与业务讨论：形成可展示的团队产出</h3><p>从明确的作品交付，到部分玩法引发的讨论，分别呈现已有成果与关注点。</p></div></div>
+<div class="results-demo-layout"><div class="results-demo-metric"><strong>5 / 5</strong><b>小组完成游戏Demo</b><p>每组至少包含一个玩法</p></div><div class="results-demo-detail"><div><h4>明确交付</h4><p>完成限定时间内的跨岗位协作与Demo展示，形成可展示的团队作品。</p></div><div><h4>业务讨论</h4><p>部分玩法引发评委对来源与创新性的追问，活动后仍有相关讨论，为业务提供可继续评估的创意素材。</p></div></div></div>
+</div></section>
+<section id="reflection" aria-labelledby="reflection-title"><div class="section-head"><div class="section-num">05</div><div><h2 id="reflection-title">个人复盘</h2></div></div>
+<div class="reflection-insights">
+<article class="reflection-insight"><div class="diagnosis-head"><span class="step-letter" aria-hidden="true">A</span><div><h3>先明确培养边界，再组织内容</h3></div></div><p>多方需求需要经过取舍，才能形成可执行的培养任务。优先级不仅决定纳入什么，也决定内容深度、时间和资源投入。统一集训、岗位学习与长期带教各有作用，设计应先明确各自的边界。</p></article>
+<article class="reflection-insight"><div class="diagnosis-head"><span class="step-letter" aria-hidden="true">B</span><div><h3>内容审核要关注新人能否据此行动</h3></div></div><p>专业内容完整，不等于新人能够理解和应用。课程开发与活动复盘需要将经验转成具体情境、判断方法与工作行为。审核既要看是否讲清楚，也要看新人能否据此分析情境、作出判断并采取行动。</p></article>
+</div>
+<article class="reflection-evaluation"><div class="diagnosis-head"><span class="step-letter" aria-hidden="true">C</span><div><h3>用真实工作中的应用反馈改进培养</h3></div></div><div class="reflection-evaluation-columns"><div><h4>现有评价的范围</h4><p>现有评价覆盖体验、即时学习与团队交付，但对新人在真实工作中是否持续应用所学，了解仍然有限。</p></div><div><h4>后续改进</h4><p>选择少量可观察的行为，与导师约定观察方式和回访时间，以实际应用反馈判断哪些内容值得保留、哪些需要调整。</p></div></div></article>
+</section>
+<footer><span>蔡榕臻 · 项目作品集</span></footer>
+</main>
+<script>
+const tabs=[document.getElementById('tab-july'),document.getElementById('tab-aug')];function selectTab(i){tabs.forEach((b,n)=>{b.setAttribute('aria-selected',String(i===n));b.tabIndex=i===n?0:-1;document.getElementById(b.getAttribute('aria-controls')).hidden=i!==n})}tabs.forEach((b,i)=>{b.addEventListener('click',()=>selectTab(i));b.addEventListener('keydown',e=>{if(['ArrowRight','ArrowLeft','Home','End'].includes(e.key)){e.preventDefault();const n=e.key==='Home'?0:e.key==='End'?1:1-i;selectTab(n);tabs[n].focus()}})});selectTab(0);
+const readingLinks=Array.from(document.querySelectorAll('.reading-nav a'));
+const readingSections=readingLinks.map(link=>document.getElementById(link.getAttribute('href').slice(1)));
+function updateReadingPosition(){
+  const readingLine=Math.min(window.innerHeight*.28,220);
+  let current=0;
+  readingSections.forEach((section,index)=>{if(section.getBoundingClientRect().top<=readingLine)current=index});
+  if(window.scrollY>0&&window.scrollY+window.innerHeight>=document.documentElement.scrollHeight-4)current=readingSections.length-1;
+  readingLinks.forEach((link,index)=>{if(index===current)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current')});
+}
+let readingFramePending=false;
+function scheduleReadingUpdate(){if(readingFramePending)return;readingFramePending=true;requestAnimationFrame(()=>{readingFramePending=false;updateReadingPosition()})}
+window.addEventListener('scroll',scheduleReadingUpdate,{passive:true});
+window.addEventListener('resize',scheduleReadingUpdate);
+window.addEventListener('load',scheduleReadingUpdate);
+window.addEventListener('pageshow',scheduleReadingUpdate);
+document.addEventListener('toggle',scheduleReadingUpdate,true);
+if('ResizeObserver' in window){const readingResizeObserver=new ResizeObserver(scheduleReadingUpdate);readingResizeObserver.observe(document.querySelector('main'))}
+updateReadingPosition();
+</script>
+</body></html>

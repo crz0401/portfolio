@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Cai Rongzhen’s case study of the 2026 graduate onboarding program: needs assessment, design, coordination, delivery and reflection."><title>2026 Graduate Onboarding Program · Cai Rongzhen</title><style>
+:root {
+  --paper:#f7f6f2; --ink:#203044; --body:#46505a; --muted:#626b72;
+  --accent:#ad502b; --line:#dedbd4; --soft:#f0eee8; --warm:#f2efe9;
+  --body-size:16px; --detail-size:14px; --caption-size:13px;
+  --hero-size:56px; --subtitle-size:33px; --section-size:32px;
+  --block-size:23px; --module-size:20px; --component-size:18px; --number-size:64px;
+  --gutter:48px; --section-top:28px; --section-bottom:60px;
+  --paragraph-space:18px; --block-space:36px; --module-space:24px;
+  --reading-width:80ch; --nav-width:180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{margin:0;background:var(--paper);color:var(--body);font:400 var(--body-size)/1.8 -apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}button{font:inherit}strong,b{font-weight:600}
+h1,h2,h3,h4,h5{color:var(--ink);font-weight:600;line-height:1.45;margin:0}
+p{margin:0 0 var(--paragraph-space)}ul,ol{margin:12px 0 20px;padding-left:21px}li{margin:8px 0}
+[hidden]{display:none!important}
+a:hover{color:var(--accent)}a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+header{position:sticky;top:0;z-index:20;background:rgba(247,246,242,.97);border-bottom:1px solid var(--line)}
+.header-bar{max-width:1380px;margin:0 auto;padding:20px 40px;min-height:65px}
+.brand{display:inline-flex;gap:20px;font-size:14px;line-height:1.7}.brand strong{color:var(--accent)}.brand span{color:var(--ink)}
+main{width:calc(100% - 240px);max-width:1120px;margin-left:auto;margin-right:230px;padding:0 40px}
+.reading-nav{position:fixed;right:24px;top:50%;transform:translateY(-50%);width:var(--nav-width);z-index:15}
+.reading-nav>p{font-size:12px;letter-spacing:.7px;margin:0 0 16px 19px}
+.reading-nav ol{list-style:none;border-left:1px solid var(--line);padding:0;margin:0}
+.reading-nav li{margin:0;position:relative}
+.reading-nav a{display:flex;gap:10px;align-items:center;padding:12px 0 12px 19px;min-height:52px;color:var(--muted);font-size:13px;line-height:1.6}
+.reading-nav a:before{content:"";position:absolute;left:-4px;top:50%;transform:translateY(-50%);width:7px;height:7px;border-radius:50%;background:var(--line);box-shadow:0 0 0 4px var(--paper)}
+.reading-nav .nav-number{font-size:11px;font-variant-numeric:tabular-nums;flex:none}
+.reading-nav a[aria-current="location"]{font-weight:600;color:var(--ink)}
+.reading-nav a[aria-current="location"]:before{background:var(--accent);box-shadow:0 0 0 4px var(--paper),0 0 0 5px var(--accent)}
+.skip-link{position:fixed;top:8px;left:12px;z-index:50;background:var(--paper);padding:10px 15px;transform:translateY(-180%)}.skip-link:focus{transform:none}
+/* Overview */
+.hero{padding:64px 0 52px;scroll-margin-top:85px}
+.eyebrow{font-size:var(--caption-size);letter-spacing:.5px;font-weight:600;color:var(--accent);margin-bottom:24px}
+.hero h1{font-size:var(--hero-size);line-height:1.25;letter-spacing:-1.3px;max-width:900px}
+.hero-subtitle{font-size:var(--subtitle-size);font-weight:400;color:var(--ink);line-height:1.4;margin:18px 0 26px;letter-spacing:-.5px}
+.lead{font-size:19px;line-height:1.85;max-width:78ch;margin-bottom:0}
+.metadata{display:grid;grid-template-columns:1fr 1.45fr .55fr;gap:0;border-top:1px solid var(--line);padding-top:24px;margin:32px 0 0}
+.metadata>div{padding:0 26px;border-left:1px solid var(--line);min-width:0}.metadata>div:first-child{padding-left:0;border:0}
+.metadata dt{font-size:var(--caption-size);color:var(--muted)}.metadata dd{margin:6px 0 0;font-size:23px;font-weight:600;color:var(--ink);line-height:1.5}
+.key-change{padding:0;margin-top:28px}.key-change h2{font-size:var(--caption-size);color:var(--accent);margin-bottom:8px}.key-change p{font-size:17px;margin:0;max-width:900px}
+/* Main chapters: independent, light numeral above the inset heading. */
+section{padding:var(--section-top) 0 var(--section-bottom);border-bottom:1px solid var(--line);scroll-margin-top:95px}
+#context{border-top:1px solid var(--line)}
+.section-head{display:grid;grid-template-columns:var(--gutter) minmax(0,1fr);row-gap:9px;margin-bottom:24px}
+.section-number{grid-column:1/-1;font:300 var(--number-size)/1 "Helvetica Neue",Arial,sans-serif;letter-spacing:.01em;color:var(--accent);padding:0}
+.section-head>div{grid-column:2;min-width:0}.section-head h2{font-size:var(--section-size);letter-spacing:-.4px}
+.section-head p{margin:10px 0 0;max-width:var(--reading-width)}
+.section-outline{display:flex;align-items:center;flex-wrap:wrap;gap:14px 26px;background:var(--soft);padding:13px 16px;font-size:var(--detail-size);margin:0 0 24px var(--gutter)}
+.section-outline a{display:flex;gap:9px;align-items:center;line-height:1.65}.section-outline b{font:500 var(--caption-size) Arial,sans-serif;color:var(--accent)}
+/* Core blocks: marker occupies its own column, prose and evidence share an edge. */
+.subsection{padding:0;scroll-margin-top:95px;min-width:0}
+.subsection+.subsection{margin-top:var(--block-space)}
+.subsection-head{display:grid;grid-template-columns:var(--gutter) minmax(0,1fr);gap:0;align-items:start;margin-bottom:14px}
+.letter{width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--accent);border-radius:50%;color:var(--accent);font:500 14px/1 Arial,sans-serif;margin-top:1px}
+.subsection-head h3{font-size:var(--block-size)}
+.subsection>:not(.subsection-head){margin-left:var(--gutter)}
+.subsection>p:not(.kicker),.case>p:not(.kicker){max-width:var(--reading-width)}
+.subsection>p:first-of-type{margin-bottom:24px}
+.subsection>:last-child,.case>:last-child{margin-bottom:0}
+.kicker{font-size:var(--detail-size);color:var(--accent);font-weight:500;line-height:1.65;margin:var(--module-space) 0 8px}
+/* Tables are evidence, rather than a separate hierarchy level. */
+.data-table{width:100%;table-layout:fixed;border-collapse:collapse;line-height:1.8;font-size:var(--body-size);margin:20px 0}
+.subsection>.data-table{width:calc(100% - var(--gutter))}
+.data-table th,.data-table td{text-align:left;vertical-align:top;padding:14px 16px;border-bottom:1px solid var(--line);overflow-wrap:break-word}
+.data-table thead th{font-size:var(--caption-size);font-weight:600;color:var(--muted);background:var(--soft);padding:10px 16px}
+.data-table tbody th{font-weight:600;color:var(--ink)}
+.sources-table th:first-child{width:36%}.responsibilities-table th:first-child{width:23%}.responsibilities-table th:last-child{width:24%}
+.responsibilities-table tbody td:last-child{font-size:var(--detail-size)}
+.mechanism-table th:first-child{width:28%}.mechanism-table th:last-child{width:33%}.mechanism-table tbody th{font-weight:400}
+.timing-table th:first-child{width:24%}.timing-table th:nth-child(2){width:17%}
+/* Stakeholder needs and constraints have equal headings; stakeholder labels are subordinate. */
+.needs-group>h4,.constraints-group>h4{font-size:var(--module-size);margin-bottom:14px}
+.stakeholder{display:grid;grid-template-columns:180px minmax(0,1fr);gap:24px;align-items:start;border-top:1px solid var(--line);padding:16px 0;min-width:0}
+.stakeholder h5{font-size:var(--detail-size);font-weight:500;color:var(--muted);line-height:1.8}
+.stakeholder ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 20px;list-style:none;padding:0;margin:0}
+.stakeholder li{margin:0}
+.constraints-group{margin-top:32px}.constraints-group ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 24px;border-top:1px solid var(--line);list-style:none;padding:14px 0 0;margin:0}.constraints-group li{margin:0}
+.info-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:24px 0}
+.info-grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.info-grid>div{min-width:0;border-top:1px solid var(--line);padding-top:16px}
+.info-grid h4{font-size:var(--component-size);margin-bottom:12px}.info-grid ul{list-style:none;padding:0;margin:0;font-size:var(--body-size);line-height:1.8}
+/* Specific design changes and selected cases. */
+.iteration{padding:0;border:0;margin-top:var(--module-space);margin-bottom:0}
+.iteration+.iteration{margin-top:32px}
+.article-head{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:14px}
+.article-head>span{font-size:var(--caption-size);color:var(--accent);flex:none}.article-head h4{font-size:var(--module-size)}
+.iteration>.kicker:first-of-type{color:var(--muted);margin:6px 0 14px}
+.iteration p:last-child{margin-bottom:0}
+.iteration-columns{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;margin:14px 0 16px}.iteration-columns>div{min-width:0}.iteration-columns>div+div{border-left:1px solid var(--line);padding-left:24px}.comparison-label{font-size:var(--caption-size);font-weight:500;color:var(--muted);margin:0 0 8px}.iteration-columns>div+div .comparison-label{color:var(--accent)}
+.judgment,.content-review{padding:0;margin:20px 0}.judgment p,.content-review p:last-child{margin:0;max-width:var(--reading-width)}.content-review .kicker{margin:0 0 8px}
+.stage-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:24px;margin-bottom:24px}
+.stage-grid>div{padding:16px 0 0;min-width:0;border-top:1px solid var(--line)}
+.stage-grid .kicker{font-size:var(--caption-size);margin:0 0 8px}.stage-grid h4{font-size:var(--module-size);margin-bottom:12px}.stage-grid p{font-size:var(--body-size)}
+.stage-grid .format{font-size:var(--caption-size);line-height:1.75;margin:16px 0 0;color:var(--muted)}
+.schedule{border-top:1px solid var(--line);padding:20px 0 0;background:transparent;margin-top:24px}
+.schedule-heading{display:flex;gap:20px;justify-content:space-between;align-items:center;margin-bottom:16px;flex-wrap:wrap}.schedule-heading h4{font-size:var(--module-size)}
+[role="tablist"]{display:flex;gap:7px;flex-wrap:wrap}
+[role="tab"]{font-size:var(--caption-size);line-height:1.5;background:none;color:var(--muted);border:1px solid var(--line);border-radius:3px;padding:9px 13px;cursor:pointer}
+[role="tab"][aria-selected="true"]{color:var(--paper);background:var(--ink);border-color:var(--ink)}
+[role="tabpanel"]>.kicker{color:var(--muted);font-size:var(--caption-size);margin:0 0 22px}
+.day-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0}
+.day{border-left:1px solid var(--line);padding:0 16px;min-width:0}.day:first-child{border:0;padding-left:0}.day:last-child{padding-right:0}
+.day h5{font-size:21px}.day p{font-size:var(--body-size);line-height:1.8;margin:9px 0 0}.day .day-focus{color:var(--accent);font-size:var(--caption-size);margin:6px 0 14px}
+.role-days{grid-template-columns:repeat(5,minmax(0,1fr))}.role-days .day h5{font-size:19px}
+.case{padding:0;margin-top:24px}.case+.case{margin-top:var(--block-space)}
+.case>.article-head{flex-direction:column;align-items:flex-start;gap:8px}.case>.article-head h4{font-size:var(--module-size)}
+.case>.kicker:first-of-type{font-size:var(--detail-size);color:var(--muted);margin:0 0 14px}
+/* The existing course process and its responsive sequence are retained. */
+.step-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;list-style:none;padding:0;margin:24px 0}
+.step-flow>li{background:var(--soft);padding:22px 18px;min-width:0;margin:0;position:relative}
+.step-count{font-size:12px;color:var(--accent);display:block;margin-bottom:10px}.step-flow h5{font-size:17px}.step-flow p{font-size:15px;line-height:1.8;margin:12px 0 0}
+.step-flow>li+li:before{content:"→";color:var(--muted);position:absolute;left:-16px;top:32px;font-size:13px}
+.course-structure{list-style:none;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin:14px 0 0}
+.course-structure>li{border-top:1px solid var(--line);padding-top:13px;font-size:var(--body-size);min-width:0}.course-structure strong{color:var(--ink);display:block;font-size:var(--component-size);margin-bottom:7px}
+.activity-heading{font-size:var(--module-size);margin:24px 0 14px}
+.theme-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:24px}
+.theme-grid>div{border-top:1px solid var(--line);padding:16px 0 0;min-width:0}.theme-grid h5{font-size:var(--component-size);margin-bottom:12px}.theme-grid .kicker{font-size:var(--caption-size);margin:16px 0 8px}.theme-grid p,.theme-grid ul{font-size:var(--body-size)}.theme-grid ul{list-style:none;padding:0;margin-bottom:0}
+/* Verifiable outputs: a few prominent numbers. */
+.satisfaction{display:flex;align-items:center;gap:12px 24px;border-top:1px solid var(--line);padding-top:16px;width:fit-content;max-width:calc(100% - var(--gutter));flex-wrap:wrap;margin-top:20px}
+.satisfaction>span{font-size:var(--caption-size);color:var(--accent)}.satisfaction>strong{font-size:32px;font-weight:500;color:var(--ink);line-height:1.3}.satisfaction small{font-size:21px;font-weight:400}.satisfaction p{font-size:var(--detail-size);margin:0}
+.demo-metric{padding:0;margin:20px 0;max-width:100%}.demo-metric>strong{font-size:46px;color:var(--ink);font-weight:500;line-height:1.3}.demo-metric h4{font-size:var(--component-size);margin:10px 0}.demo-metric p{font-size:var(--detail-size);margin:0}
+/* Reflection uses editorial columns, without decorative frames. */
+#reflection .section-body{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
+#reflection .subsection{padding:0;margin:0;min-width:0}#reflection .subsection>p{margin-bottom:0}
+#reflection .subsection:last-child{grid-column:1/-1;margin-top:4px}
+.reflection-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.reflection-columns>div+div{border-left:1px solid var(--line);padding-left:28px}.reflection-columns .kicker{margin-top:0}.reflection-columns p:last-child{margin:0}
+footer{padding:30px 0 44px;font-size:12px;color:var(--muted)}
+@media(min-width:1600px){main{margin-right:auto}}
+@media(max-width:1400px) and (min-width:701px){
+  .stage-grid,.theme-grid,.info-grid:not(.cols-2){grid-template-columns:1fr}
+  .stakeholder{grid-template-columns:150px minmax(0,1fr);gap:20px}.stakeholder ul{grid-template-columns:1fr}
+  .day-grid,.role-days{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 0}.day:nth-child(odd){border-left:0;padding-left:0}.day:nth-child(even){padding-right:0}
+  #reflection .section-body{grid-template-columns:1fr}.reflection-columns{grid-template-columns:1fr}.reflection-columns>div+div{padding:20px 0 0;border-left:0;border-top:1px solid var(--line)}
+}
+@media(min-width:1000px) and (max-width:1250px){
+  main{padding:0 32px}.step-flow{grid-template-columns:repeat(2,minmax(0,1fr))}.step-flow>li+li:before{display:none}.course-structure{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:999px) and (min-width:701px){
+  :root{--number-size:54px;--hero-size:46px;--subtitle-size:30px;--section-size:29px}
+  main{width:calc(100% - 170px);margin-right:160px;padding:0 28px}.reading-nav{width:140px;right:10px}.reading-nav a{font-size:12px;gap:7px;padding-left:14px}.reading-nav>p{font-size:11px;margin-left:14px}
+  .lead{font-size:18px}.metadata{grid-template-columns:1fr 1.3fr .5fr}.metadata>div{padding:0 15px}.metadata dd{font-size:19px}
+  .iteration-columns{grid-template-columns:1fr}.iteration-columns>div+div{border-left:0;border-top:1px solid var(--line);padding:16px 0 0}
+  .stakeholder{grid-template-columns:140px minmax(0,1fr);gap:18px}.constraints-group ul,.info-grid.cols-2{grid-template-columns:1fr}
+  .step-flow,.course-structure{grid-template-columns:repeat(2,minmax(0,1fr))}.step-flow>li+li:before{display:none}
+}
+@media(max-width:700px){
+  :root{--gutter:0px;--number-size:44px;--body-size:15px;--detail-size:13px;--caption-size:13px;--hero-size:36px;--subtitle-size:25px;--section-size:26px;--block-size:20px;--module-size:19px;--component-size:18px;--section-top:24px;--section-bottom:44px;--block-space:32px}
+  main{width:100%;margin:0;padding:0 22px calc(95px + env(safe-area-inset-bottom))}.header-bar{padding:15px 22px;min-height:54px}.brand{font-size:13px;gap:15px}
+  .reading-nav{position:fixed;top:auto;bottom:0;left:0;right:0;transform:none;width:auto;background:rgba(247,246,242,.99);border-top:1px solid var(--line);padding:10px 8px calc(10px + env(safe-area-inset-bottom))}
+  .reading-nav>p{display:none}.reading-nav ol{display:flex;justify-content:space-between;border:0;position:relative}.reading-nav ol:before{content:"";position:absolute;left:8%;right:8%;top:4px;height:1px;background:var(--line)}
+  .reading-nav li{flex:1;min-width:0}.reading-nav a{padding:15px 2px 0;min-height:45px;display:flex;flex-direction:column;gap:0;text-align:center;line-height:1.45;font-size:10px}
+  .reading-nav a:before{left:50%;top:1px;transform:translateX(-50%)}.reading-nav .nav-number{display:none}.nav-name{font-size:0}.nav-name:after{font-size:10px}
+  .reading-nav li:nth-child(1) .nav-name:after{content:"Overview"}.reading-nav li:nth-child(2) .nav-name:after{content:"Needs"}.reading-nav li:nth-child(3) .nav-name:after{content:"Design"}.reading-nav li:nth-child(4) .nav-name:after{content:"Delivery"}.reading-nav li:nth-child(5) .nav-name:after{content:"Outputs"}.reading-nav li:nth-child(6) .nav-name:after{content:"Reflection"}
+  .hero{padding:48px 0 42px}.eyebrow{font-size:12px;margin-bottom:22px}.hero h1{letter-spacing:-.7px}.hero-subtitle{letter-spacing:0}.lead{font-size:16px}
+  .metadata{grid-template-columns:1fr 1.2fr .5fr;margin-top:30px;padding-top:20px}.metadata>div{padding:0 10px}.metadata dt{font-size:12px}.metadata dd{font-size:16px}.key-change p{font-size:15px}
+  .section-head>div{grid-column:1/-1}.section-head{margin-bottom:24px}.section-outline{gap:12px 20px}.subsection-head{grid-template-columns:38px minmax(0,1fr)}.letter{width:28px;height:28px;font-size:13px}
+  .needs-group,.constraints-group{width:100%}.stakeholder{grid-template-columns:1fr;gap:8px}.stakeholder ul,.constraints-group ul{grid-template-columns:1fr}
+  .data-table thead{display:none}.data-table,.data-table tbody{display:block}.data-table tr{display:block;border-bottom:1px solid var(--line);padding:18px 0}.data-table tr:first-child{border-top:1px solid var(--line)}
+  .data-table th,.data-table td{display:block;width:100%!important;border:0;padding:0;overflow-wrap:break-word}.data-table td{margin-top:12px}.data-table td:before{content:attr(data-label);display:block;font-size:12px;color:var(--muted);font-weight:500;margin-bottom:4px}.sources-table td:before{display:none}.data-table tbody th{font-size:16px}
+  .info-grid,.info-grid.cols-2,.stage-grid,.theme-grid,.iteration-columns{grid-template-columns:1fr}.iteration-columns>div+div{border-left:0;border-top:1px solid var(--line);padding:16px 0 0}
+  .schedule-heading{gap:15px}[role="tab"]{font-size:12px;padding:8px 10px}
+  .day-grid,.role-days{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 0}.day{padding:0 12px}.day:nth-child(odd){padding-left:0;border-left:0}.day:nth-child(even){padding-right:0}.day h5{font-size:20px}.day .day-focus{font-size:12px}
+  .step-flow,.course-structure{grid-template-columns:1fr;gap:15px}.step-flow>li+li:before{display:none}.step-flow>li{padding:20px 18px}
+  .satisfaction{gap:10px 18px}.satisfaction>strong{font-size:29px}.demo-metric>strong{font-size:42px}
+  #reflection .section-body{grid-template-columns:1fr;gap:32px}.reflection-columns{grid-template-columns:1fr;gap:22px}.reflection-columns>div+div{border-left:0;border-top:1px solid var(--line);padding:20px 0 0}
+}
+@media(max-width:380px){.hero h1{font-size:32px}.hero-subtitle{font-size:23px}.metadata dd{font-size:15px}.day-grid,.role-days{grid-template-columns:1fr}.day{padding:18px 0 0;border-left:0;border-top:1px solid var(--line)}.day:first-child{padding-top:0;border-top:0}.day:last-child{padding-top:18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{header,.reading-nav,.skip-link{display:none}main{width:100%;max-width:none;margin:0;padding:0}body{background:#fff;font-size:11pt}section{padding:30px 0}#aug[hidden]{display:block!important}[role="tablist"]{display:none}.hero{padding-top:0}.subsection-head,.section-head,.article-head{break-after:avoid}.data-table tr,.info-grid>div,.theme-grid>div{break-inside:avoid}}
+
+</style></head><body><a class="skip-link" href="#main">Skip to content</a><header><div class="header-bar"><a href="#top" class="brand"><strong>Cai Rongzhen</strong><span>Project Portfolio</span></a></div></header><nav class="reading-nav" aria-label="Project sections"><p>Project Sections</p><ol><li><a href="#top" aria-current="location"><span class="nav-number">00</span><span class="nav-name">Overview</span></a></li><li><a href="#context"><span class="nav-number">01</span><span class="nav-name">Needs & Objectives</span></a></li><li><a href="#design"><span class="nav-number">02</span><span class="nav-name">Design & Schedule</span></a></li><li><a href="#delivery"><span class="nav-number">03</span><span class="nav-name">Coordination & Delivery</span></a></li><li><a href="#results"><span class="nav-number">04</span><span class="nav-name">Outputs & Value</span></a></li><li><a href="#reflection"><span class="nav-number">05</span><span class="nav-name">Reflection</span></a></li></ol></nav><main id="main"><div id="top" class="hero"><p class="eyebrow">Graduate Onboarding | Program Redesign</p><h1>2026 Graduate<br>Onboarding Program</h1><p class="hero-subtitle">From Needs Assessment to Delivery</p><p class="lead">I redesigned the program for the 2026 cohort, building on previous years and balancing project teams’ learning needs with limits on time away from work. I led needs assessment, program design, task allocation, delivery and evaluation.</p><dl class="metadata"><div><dt>Participants</dt><dd>42 graduate hires</dd></div><div><dt>My Role</dt><dd>End-to-end project lead</dd></div><div><dt>Year</dt><dd>2026</dd></div></dl><aside class="key-change"><h2>The key change for this cohort</h2><p>I expanded the program beyond the in-person training period, spreading learning across several phases and combining courses developed with internal experts, team activities and a GameJam.</p></aside></div><section id="context" aria-labelledby="context-title"><div class="section-head"><span class="section-number">01</span><div><h2 id="context-title">Needs Assessment: Defining the Program’s Scope</h2><p>I compared project teams’ requirements with new hires’ expectations, identified shared needs and set learning objectives within the available time and resources.</p></div></div><div class="section-body"><nav class="section-outline" aria-label="Section contents"><a href="#context-a"><b>A</b><span>Information Sources</span></a><a href="#context-b"><b>B</b><span>Needs &amp; Constraints</span></a><a href="#context-c"><b>C</b><span>Priorities &amp; Objectives</span></a></nav>
+<div class="subsection" id="context-a"><div class="subsection-head"><span class="letter" aria-hidden="true">A</span><h3>Gathering Information from Multiple Sources</h3></div><p>I gathered information on project teams’ expectations, new hires’ learning interests and feedback on previous programs.</p>
+<table class="data-table sources-table"><thead><tr><th scope="col">Information source</th><th scope="col">Purpose</th></tr></thead><tbody><tr><th scope="row" data-label="Information source">Follow-up interviews with high-performing graduate hires from previous cohorts and their mentors</th><td data-label="Purpose">Understand what teams looked for in new hires and how their expectations changed at different stages of onboarding</td></tr><tr><th scope="row" data-label="Information source">Review of feedback across recruitment interview rounds</th><td data-label="Purpose">Identify the skills teams valued, successful candidates’ strengths and areas flagged for further assessment</td></tr><tr><th scope="row" data-label="Information source">Interviews with graduate hires from previous cohorts</th><td data-label="Purpose">Identify useful content, overloaded schedules and problems with the training experience</td></tr><tr><th scope="row" data-label="Information source">Interviews with the incoming cohort</th><td data-label="Purpose">Understand new hires’ backgrounds, learning interests and expectations for the program</td></tr><tr><th scope="row" data-label="Information source">Surveys of mentors, team leads and HR business partners for selected roles</th><td data-label="Purpose">Identify role-specific challenges to address in later courses</td></tr></tbody></table>
+<p>The first four sources shaped the overall program. The surveys helped define the content of later role-specific courses.</p></div>
+<div class="subsection" id="context-b"><div class="subsection-head"><span class="letter" aria-hidden="true">B</span><h3>Comparing Stakeholder Needs and Practical Constraints</h3></div><p>I organized the expectations of project teams, HR business partners, new hires and the training team to identify common needs.</p>
+<div class="needs-group"><h4>Stakeholder Needs</h4><div class="stakeholders"><div class="stakeholder"><h5>Project Teams — Mentors &amp; Team Leads</h5><ul><li>Address common challenges early in onboarding</li><li>Help new hires understand role expectations</li><li>Help new hires gradually take on work assignments</li></ul></div><div class="stakeholder"><h5>HR Business Partners</h5><ul><li>Help new hires adapt to the workplace</li><li>Help new hires understand how to communicate and collaborate at work</li><li>Help new hires settle into the organization</li></ul></div><div class="stakeholder"><h5>Incoming Graduate Hires</h5><ul><li>Learn about the industry and the company’s strategic projects</li><li>Meet peers and build connections</li><li>Take part in engaging learning experiences</li></ul></div></div></div>
+<aside class="constraints-group"><h4>Practical Constraints</h4><ul><li>Limited time away from project work</li><li>Travel costs for participants outside Beijing</li><li>Learning overload from a dense schedule</li><li>Different comfort levels when interacting with unfamiliar peers</li></ul></aside></div>
+<div class="subsection" id="context-c"><div class="subsection-head"><span class="letter" aria-hidden="true">C</span><h3>Turning Stakeholder Expectations into Learning Objectives</h3></div><p>I considered whether each need was shared across teams, relevant early in onboarding and suitable for the program to address.</p>
+<aside class="judgment"><p>Within the available training time, I prioritized needs that were <strong>shared across project teams, relevant early in onboarding, and suited to group learning and collaborative tasks</strong>. The program would support the mentoring already provided by project teams.</p></aside>
+<table class="data-table"><thead><tr><th scope="col">Priority need</th><th scope="col">Learning objective</th></tr></thead><tbody><tr><th scope="row" data-label="Priority need">Understanding the industry, the company’s business and how different roles work together</th><td data-label="Learning objective">Build a basic understanding of the industry, company and roles</td></tr><tr><th scope="row" data-label="Priority need">Common challenges in adjusting to work, communicating, collaborating and making decisions</th><td data-label="Learning objective">Help new hires adjust to work and learn to collaborate</td></tr><tr><th scope="row" data-label="Priority need">New hires’ interest in meeting peers and the company’s aim to help them settle in</th><td data-label="Learning objective">Build peer connections through shared learning experiences</td></tr></tbody></table>
+</div></div></section><section id="design" aria-labelledby="design-title"><div class="section-head"><span class="section-number">02</span><div><h2 id="design-title">Program Design: Turning Objectives into a Plan</h2><p>I revised the learning schedule, industry and business content, and team activities, then organized them into a practical plan with distinct learning phases.</p></div></div><div class="section-body"><nav class="section-outline" aria-label="Section contents"><a href="#design-a"><b>A</b><span>Three Design Changes</span></a><a href="#design-b"><b>B</b><span>Learning Phases &amp; Schedule</span></a></nav>
+<div class="subsection" id="design-a"><div class="subsection-head"><span class="letter" aria-hidden="true">A</span><h3>Three Design Changes</h3></div><p>The findings shaped three changes to what participants learned and how the program was run.</p>
+<article class="iteration"><div class="article-head"><span>01</span><h4>Adjust the Learning Pace</h4></div><p class="kicker">Spread learning across several phases</p>
+<div class="iteration-columns"><div><p class="comparison-label">Previous approach and limitations</p><p>Previously, role-specific sessions were packed into the in-person training period. The schedule was dense, participants had a lot to absorb and teams had to allow more time away from work.</p></div><div><p class="comparison-label">Changes for this cohort</p><p>Company introductory courses moved to the preparatory phase. Repeated sessions offered more choice, with in-person and online attendance available at the same time. Role-specific sessions were scheduled after the in-person training period.</p></div></div>
+<p>The revised schedule supported all three objectives, giving participants more time to absorb the material while fitting around project work.</p></article>
+<article class="iteration"><div class="article-head"><span>02</span><h4>Broaden Industry and Business Understanding</h4></div><p class="kicker">Build a fuller view of the industry and business</p>
+<div class="iteration-columns"><div><p class="comparison-label">Learning objective</p><p>Help new hires understand the industry and the company’s business through shared learning.</p></div><div><p class="comparison-label">Changes for this cohort</p><p>I redesigned sessions on SLG industry trends, AI in game development and publishing, and game development and operations workflows. Feedback from new hires and project teams also shaped the role-specific courses.</p></div></div></article>
+<article class="iteration"><div class="article-head"><span>03</span><h4>Strengthen Collaborative Learning</h4></div><p class="kicker">Develop workplace skills through shared tasks</p>
+<div class="iteration-columns"><div><p class="comparison-label">Learning objective</p><p>Give new hires opportunities to work together, practice collaboration and build peer connections.</p></div><div><p class="comparison-label">Changes for this cohort</p><p>I retained the GameJam and added team development activities. Group debriefs and team presentations further deepened participants’ understanding of workplace collaboration and connected the activities to specific work expectations.</p></div></div></article></div>
+<div class="subsection" id="design-b"><div class="subsection-head"><span class="letter" aria-hidden="true">B</span><h3>Learning Phases and Schedule</h3></div><p>Each phase had a clear purpose, set of topics and attendance format.</p>
+<div class="stage-grid"><div><p class="kicker">Phase 1 · Preparatory Learning</p><h4>Company essentials</h4><p>Company introduction, risk and compliance, and intellectual property policies</p><p class="format">In person and online at the same time · Repeated sessions</p></div><div><p class="kicker">Phase 2 · In-Person Training</p><h4>Industry knowledge and teamwork</h4><p>Industry and business knowledge, peer connections and hands-on teamwork</p><p class="format">July 28–31 · Beijing</p></div><div><p class="kicker">Phase 3 · Role-Specific Sessions</p><h4>Role-specific learning</h4><p>Six sessions covering role responsibilities, work methods and practical challenges</p><p class="format">August 3–7 · In person and online at the same time</p></div></div>
+
+<div class="schedule"><div class="schedule-heading"><h4>Learning Schedule</h4><div role="tablist" aria-label="Learning phases"><button id="tab-july" role="tab" aria-controls="july" aria-selected="true">In-Person Training</button><button id="tab-aug" role="tab" aria-controls="aug" aria-selected="false" tabindex="-1">Role-Specific Sessions</button></div></div><div id="july" role="tabpanel" aria-labelledby="tab-july"><p class="kicker">July 28–31 · Beijing — From industry learning to hands-on teamwork</p><div class="day-grid"><div class="day"><h5>July 28</h5><p class="day-focus">Icebreaking &amp; Industry Understanding</p><p>Icebreaker</p><p>executive Q&amp;A</p><p>SLG insights</p><p>AI in development and publishing</p><p>game development and operations workflows</p></div><div class="day"><h5>July 29</h5><p class="day-focus">Team Development &amp; Cross-Functional Collaboration</p><p>Tangram Team Simulation</p><p>GameJam kickoff and demo development</p></div><div class="day"><h5>July 30</h5><p class="day-focus">Cross-Functional Collaboration</p><p>GameJam demo development</p></div><div class="day"><h5>July 31</h5><p class="day-focus">Project Showcase</p><p>GameJam Presentations and Review</p></div></div></div><div id="aug" role="tabpanel" aria-labelledby="tab-aug" hidden><p class="kicker">August 3–7 · Beijing-based new hires attended in person; participants at other locations joined the live online sessions.</p><div class="day-grid role-days"><div class="day"><h5>August 3</h5><p class="day-focus">17:00–18:00</p><p>Game Design</p></div><div class="day"><h5>August 4</h5><p class="day-focus">17:00–18:00</p><p>Game Operations</p></div><div class="day"><h5>August 5</h5><p class="day-focus">17:00–18:00</p><p>Game Art</p></div><div class="day"><h5>August 6</h5><p class="day-focus">17:00–18:00</p><p>User Experience Design (UED)</p></div><div class="day"><h5>August 7</h5><p class="day-focus">16:30–17:30</p><p>User Acquisition (UA)</p><p class="day-focus">17:45–18:45</p><p>Ad Creative Production</p></div></div></div></div></div></div></section><section id="delivery" aria-labelledby="delivery-title"><div class="section-head"><span class="section-number">03</span><div><h2 id="delivery-title">Coordination and Delivery: Putting the Plan into Practice</h2><p>I broke the plan into tasks, assigned responsibilities and coordinated course development, participant arrangements and resources.</p></div></div><div class="section-body"><nav class="section-outline" aria-label="Section contents"><a href="#delivery-a"><b>A</b><span>Delivery Coordination</span></a><a href="#delivery-b"><b>B</b><span>Three Selected Cases</span></a></nav>
+<div class="subsection" id="delivery-a"><div class="subsection-head"><span class="letter" aria-hidden="true">A</span><h3>Delivery Coordination: Stages and My Responsibilities</h3></div><p>I assigned tasks, tracked progress and coordinated preparation and delivery for the in-person training and role-specific sessions.</p>
+<table class="data-table responsibilities-table"><thead><tr><th scope="col">Delivery stage</th><th scope="col">My actions</th><th scope="col">Key outputs</th></tr></thead><tbody><tr><th scope="row" data-label="Delivery stage">01 · Task Breakdown &amp; Allocation</th><td data-label="My actions">Defined tasks for content, activities, participant arrangements, resources and evaluation; assigned responsibilities and tracked progress</td><td data-label="Key outputs">Task board and assigned responsibilities</td></tr><tr><th scope="row" data-label="Delivery stage">02 · Course &amp; Activity Development</th><td data-label="My actions">Summarized learning needs; developed and reviewed selected courses with internal experts; helped design the icebreaker, team development activities and GameJam</td><td data-label="Key outputs">Course content, activity rules and participant handbook</td></tr><tr><th scope="row" data-label="Delivery stage">03 · Participant &amp; Resource Preparation</th><td data-label="My actions">Prepared schedules, notices, travel guidance and training materials; worked with HR business partners, participants and group leads; arranged venues, equipment and API access</td><td data-label="Key outputs">Participant materials and resources for activities and game development</td></tr><tr><th scope="row" data-label="Delivery stage">04 · Delivery &amp; On-Site Coordination</th><td data-label="My actions">Led activities, debriefs and closing summaries; supported the GameJam kickoff and showcase; handled on-site issues</td><td data-label="Key outputs">Training activities, team debriefs and project presentations</td></tr><tr><th scope="row" data-label="Delivery stage">05 · Evaluation &amp; Documentation</th><td data-label="My actions">Designed quizzes for the training and role-specific sessions; compiled participant feedback and activity results</td><td data-label="Key outputs">Quiz results, feedback and project records</td></tr></tbody></table>
+<p>Team members handled some communication with instructors and executives, promotional materials, equipment preparation and on-site support. Administration, IT and internal experts provided resources and specialist support.</p></div>
+<div class="subsection" id="delivery-b"><div class="subsection-head"><span class="letter" aria-hidden="true">B</span><h3>Three Cases: Key Decisions and Actions</h3></div><p>The three cases show how I developed course content, led activities and debriefs, and improved GameJam rewards and evaluation.</p>
+<article class="case"><div class="article-head"><span>Case 01</span><h4>Ad Creative Production Session</h4></div><p class="kicker">Turning expert experience into methods new hires could use</p>
+<p>The session helped new hires in ad creative production understand their responsibilities and helped colleagues in other roles understand the production process and how to work with the creative team. Drawing on feedback from new hires and project teams, I worked with the instructor to set the focus, suggest examples and review the content.</p>
+<ol class="step-flow"><li><span class="step-count">01</span><h5>Review learning needs</h5><p>Summarized feedback from new hires and departments</p></li><li><span class="step-count">02</span><h5>Work with the instructor</h5><p>Discussed challenges the instructor had seen while mentoring new hires and how they addressed them</p></li><li><span class="step-count">03</span><h5>Plan the structure and examples</h5><p>Agreed on the outline and suggested using cases to explain the work</p></li><li><span class="step-count">04</span><h5>Review and refine</h5><p>Reviewed the content and suggested revisions</p></li></ol>
+<aside class="content-review"><p class="kicker">One recommendation from my content review</p><p>I suggested comparing two scenarios using ROI, impressions and spend: one where all three indicators showed good performance, and one where a single indicator underperformed. This would help new hires use market data to assess ad creative performance and decide what to improve.</p></aside>
+<p class="kicker">Final course structure</p><ol class="course-structure"><li><strong>Understand the Role</strong> — Responsibilities and value</li><li><strong>Build a Broader Perspective</strong> — Creative production and performance analysis workflows</li><li><strong>Build Skills</strong> — Core skills and development paths</li><li><strong>Address Challenges</strong> — Common challenges for new hires and AI applications</li></ol></article>
+<article class="case"><div class="article-head"><span>Case 02</span><h4>Team Development Activity</h4></div><p class="kicker">Tangram Team Simulation</p>
+<p>Seven groups worked together on different tasks with limited resources and restrictions on information sharing. I helped design the activity, hosted it, guided the debriefs and delivered the closing summary. I linked the introduction to the previous day’s session on game development and operations, so participants could explore cross-functional collaboration through the task.</p>
+<h5 class="activity-heading">① Hosting and Managing the Activity</h5>
+<p>I managed the rules, participation and timing to keep the activity and debriefs on track.</p>
+<table class="data-table timing-table"><thead><tr><th scope="col">Stage</th><th scope="col">Duration</th><th scope="col">What I managed</th></tr></thead><tbody><tr><th scope="row" data-label="Stage">Rules &amp; Q&amp;A</th><td data-label="Duration">5 + 5 minutes</td><td data-label="What I managed">Explained the activity rules; answered questions about the rules</td></tr><tr><th scope="row" data-label="Stage">Team Task</th><td data-label="Duration">30 minutes</td><td data-label="What I managed">Coordinated score updates; observed and recorded team behavior; addressed rule violations when needed</td></tr><tr><th scope="row" data-label="Stage">Group Debrief</th><td data-label="Duration">15 minutes</td><td data-label="What I managed">Used questions tailored to each group’s role to examine actions and their effects</td></tr><tr><th scope="row" data-label="Stage">Group Presentations</th><td data-label="Duration">20 minutes</td><td data-label="What I managed">Kept each group’s presentation within three minutes, covering lessons, setbacks and possible improvements</td></tr><tr><th scope="row" data-label="Stage">Closing Summary</th><td data-label="Duration">10 minutes</td><td data-label="What I managed">Summarized three workplace themes and linked them to collaboration in game development and operations</td></tr></tbody></table>
+<h5 class="activity-heading">② Debrief Questions Tailored to Each Group’s Role</h5>
+<p>I used different questions for task groups and the coordinating group to explore goals, actions, effects and improvements.</p>
+<div class="info-grid cols-2"><div><h4>Task Groups · Groups 1–6</h4><ul><li>How did your definition of success change across stages?</li><li>What did you do when resources were insufficient, and how did that affect the outcome?</li><li>How did you balance your own tasks with support for other groups?</li></ul></div><div><h4>Coordinating Group · Group 7</h4><ul><li>How did your role help or hinder overall progress?</li><li>How did you prioritize resources when several requests arose at once?</li><li>Where did information gaps occur, and how would you redesign information flow if you started again?</li></ul></div></div>
+<h5 class="activity-heading">③ Closing Summary: Connecting the Activity to Everyday Work</h5>
+<p>I used three themes to connect what happened in the activity with collaboration principles and practical ways of working.</p>
+<div class="theme-grid"><div><h5>Goal Alignment &amp; Team Trust</h5><p class="kicker">Starting point in the activity</p><p>Individual group tasks and the overall team score</p><p class="kicker">My key takeaways</p><ul><li>Understand why a task matters</li><li>the best result for one group may not be best for the whole team</li><li>consider shared goals and resource limits when resolving disagreements</li></ul></div><div><h5>Communication &amp; Collaboration</h5><p class="kicker">Starting point in the activity</p><p>Information sharing and task handoffs</p><p class="kicker">My key takeaways</p><ul><li>Step in where needed as the project evolves</li><li>make deliverables ready for the next team to use</li><li>flag risks promptly to mentors or team leads</li></ul></div><div><h5>Resources &amp; Tools</h5><p class="kicker">Starting point in the activity</p><p>Limited resources and recurring tasks</p><p class="kicker">My key takeaways</p><ul><li>Seek resources rather than wait for them</li><li>reuse existing assets and knowledge</li><li>document solutions so others can use them</li></ul></div></div></article>
+<article class="case"><div class="article-head"><span>Case 03</span><h4>GameJam</h4></div><p class="kicker">Improving rewards and evaluation for the GameJam</p>
+<p>New hires worked across roles to build and present a game demo within a fixed timeframe. I focused on improving the rewards and evaluation process. I also wrote the handbook, arranged development resources and helped run the event.</p>
+<table class="data-table mechanism-table"><thead><tr><th scope="col">Area and previous approach</th><th scope="col">What I changed</th><th scope="col">Final arrangement</th></tr></thead><tbody><tr><th scope="row" data-label="Area and previous approach">Rewards: previous prizes had limited appeal, and participant feedback and demo quality showed room for improvement</th><td data-label="What I changed">Secured a larger reward budget by drawing on company strategy, previous participant feedback, comparable events and the remaining budget</td><td data-label="Final arrangement">Best Demo: RMB 5,000 per team; Audience Choice: RMB 3,000 per team; participation award: RMB 200 per person</td></tr><tr><th scope="row" data-label="Area and previous approach">Evaluation: previously based only on scores from four reviewers</th><td data-label="What I changed">Built an internal voting system with the AI tool Miaoda and added a segment for teams to promote their demos</td><td data-label="Final arrangement">Scores from expert reviewers plus an internal vote, giving more employees a chance to participate and see the demos</td></tr></tbody></table></article></div></div></section><section id="results" aria-labelledby="results-title"><div class="section-head"><span class="section-number">04</span><div><h2 id="results-title">Outputs: Supporting Learning Objectives and Follow-Up</h2><p>The program included learning across several phases, team activities and a GameJam. Course materials, assessment records and team projects show what was delivered for each objective: basic knowledge, workplace collaboration and peer connections.</p></div></div><div class="section-body"><nav class="section-outline" aria-label="Section contents"><a href="#results-a"><b>A</b><span>Courses &amp; Activities</span></a><a href="#results-b"><b>B</b><span>Assessment Records</span></a><a href="#results-c"><b>C</b><span>Team Projects &amp; Business Interest</span></a></nav>
+<div class="subsection" id="results-a"><div class="subsection-head"><span class="letter" aria-hidden="true">A</span><h3>Courses and Activities: Supporting Three Learning Objectives</h3></div><p>The courses and activities addressed shared needs and supported project teams’ ongoing mentoring.</p>
+<table class="data-table"><thead><tr><th scope="col">Learning objective</th><th scope="col">Courses and activities delivered</th><th scope="col">Supporting materials</th></tr></thead><tbody><tr><th scope="row" data-label="Learning objective">Basic industry, company and role knowledge</th><td data-label="Courses and activities delivered">Industry insights, AI applications, game development and operations workflows, and six role-specific sessions</td><td data-label="Supporting materials">Course and session materials; assessment results</td></tr><tr><th scope="row" data-label="Learning objective">Workplace adjustment and collaborative learning</th><td data-label="Courses and activities delivered">Team development activities, GameJam and debriefs, giving participants opportunities to align goals, communicate and complete work together</td><td data-label="Supporting materials">Group debrief records</td></tr><tr><th scope="row" data-label="Learning objective">Peer connections and shared learning</th><td data-label="Courses and activities delivered">Icebreaking, cross-functional teams and shared activities, creating opportunities to meet, exchange ideas and collaborate</td><td data-label="Supporting materials">Team projects</td></tr></tbody></table>
+<div class="satisfaction"><span>Participant Experience</span><strong>4.98 <small>/ 5.00</small></strong><p>Satisfaction rating for this cohort’s training program</p></div></div>
+<div class="subsection" id="results-b"><div class="subsection-head"><span class="letter" aria-hidden="true">B</span><h3>Records for Assessment and Observation</h3></div><p class="kicker">Multiple ways to understand new hires’ performance</p>
+<p>Quiz results, debrief records and team projects provided different views of new hires’ learning and performance. These records could support later evaluation.</p>
+<div class="info-grid cols-3"><div><h4>Quizzes — Understanding the Content</h4><ul><li>A quiz checked understanding during the in-person training</li><li>A content-based quiz was designed for each role-specific session</li></ul></div><div><h4>Group Debrief Records — Reflection on Collaboration</h4><ul><li>Documented goals, actions and analysis of challenges</li><li>Showed how teams reflected on their experience</li></ul></div><div><h4>Demos and Presentations — Team Results</h4><ul><li>Showed gameplay mechanics, teamwork and how teams presented their results</li><li>Offered another way to observe new hires’ performance</li></ul></div></div></div>
+<div class="subsection" id="results-c"><div class="subsection-head"><span class="letter" aria-hidden="true">C</span><h3>Team Projects and Business Interest</h3></div><p class="kicker">Completed demos and ideas for further discussion</p>
+<p>All teams completed a demo. Some gameplay mechanics also drew interest from reviewers and prompted further discussion.</p>
+<div class="demo-metric"><strong>5 / 5</strong><h4>teams completed a game demo</h4><p>Each demo included at least one gameplay mechanic.</p></div>
+<p class="kicker">Completed Work</p>
+<p>Teams worked across roles to complete and present their demos within the allotted time.</p>
+<p class="kicker">Business Interest</p>
+<p>Reviewers asked whether some gameplay mechanics were original or inspired by existing games. Discussion continued after the event, providing ideas that project teams could assess further.</p></div></div></section><section id="reflection" aria-labelledby="reflection-title"><div class="section-head"><span class="section-number">05</span><div><h2 id="reflection-title">Personal Reflection</h2></div></div><div class="section-body"><div class="subsection" id="reflection-a"><div class="subsection-head"><span class="letter" aria-hidden="true">A</span><h3>Define What the Program Should Address Before Choosing Content</h3></div><p>Stakeholder needs must be prioritized to form clear learning objectives. These priorities determine what to include, how deeply to cover it and how to allocate time and resources. Shared training, role-specific courses and ongoing mentoring serve different purposes. What each should address—and where its responsibility ends—should be clear before content is selected.</p></div>
+<div class="subsection" id="reflection-b"><div class="subsection-head"><span class="letter" aria-hidden="true">B</span><h3>Review Content for Its Usefulness in Practice</h3></div><p>A course can cover a topic thoroughly and still be hard for new hires to use. Course development and activity debriefs should turn expert experience into clear examples, ways to assess situations and practical actions. Content review should ask both whether the explanation is clear and whether a new hire could use it to make a decision and act.</p></div>
+<div class="subsection" id="reflection-c"><div class="subsection-head"><span class="letter" aria-hidden="true">C</span><h3>Use Feedback from Everyday Work to Improve the Program</h3></div><div class="reflection-columns"><div><p class="kicker">What the Current Evaluation Covers</p><p>The evaluation covered participant experience, understanding of the content and team results. It told us less about whether new hires continued to use what they learned in everyday work.</p></div><div><p class="kicker">Next Step</p><p>Choose a few workplace behaviors to observe and agree with mentors on what to look for and when to follow up. Use their feedback on how new hires apply the learning to decide which content to keep and which to revise.</p></div></div></div></div></section><footer>Cai Rongzhen · Project Portfolio</footer></main><script>const readingLinks = [...document.querySelectorAll('.reading-nav a')];
+const readingSections = readingLinks.map(link => document.querySelector(link.getAttribute('href')));
+let readingFrame = false;
+function updateReadingPosition() {
+  let current = 0;
+  readingSections.forEach((section, index) => {
+    if (section.getBoundingClientRect().top <= 150) current = index;
+  });
+  if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 8) current = readingSections.length - 1;
+  readingLinks.forEach((link, index) => {
+    if (index === current) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
+  readingFrame = false;
+}
+function scheduleReadingUpdate() {
+  if (!readingFrame) {
+    readingFrame = true;
+    requestAnimationFrame(updateReadingPosition);
+  }
+}
+window.addEventListener('scroll', scheduleReadingUpdate, { passive: true });
+window.addEventListener('resize', scheduleReadingUpdate);
+window.addEventListener('load', updateReadingPosition);
+updateReadingPosition();
+
+const tabs = [...document.querySelectorAll('[role="tab"]')];
+function selectTab(tab, focus = false) {
+  tabs.forEach(item => {
+    const selected = item === tab;
+    item.setAttribute('aria-selected', String(selected));
+    item.tabIndex = selected ? 0 : -1;
+    document.getElementById(item.getAttribute('aria-controls')).hidden = !selected;
+  });
+  if (focus) tab.focus();
+  scheduleReadingUpdate();
+}
+tabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => selectTab(tab));
+  tab.addEventListener('keydown', event => {
+    let next;
+    if (event.key === 'ArrowRight') next = tabs[(index + 1) % tabs.length];
+    if (event.key === 'ArrowLeft') next = tabs[(index + tabs.length - 1) % tabs.length];
+    if (event.key === 'Home') next = tabs[0];
+    if (event.key === 'End') next = tabs[tabs.length - 1];
+    if (next) { event.preventDefault(); selectTab(next, true); }
+  });
+});
+</script></body></html>
